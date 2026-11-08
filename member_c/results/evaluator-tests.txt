@@ -1,0 +1,8 @@
+test_empty_metrics_do_not_invent_accuracy (test_evaluator.EvaluationToolTests) ... ok
+test_metrics_include_ir_after_conversion (test_evaluator.EvaluationToolTests) ... ok
+test_same_logits_drive_probability_and_argmax_comparisons (test_evaluator.EvaluationToolTests) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.425s
+
+OK

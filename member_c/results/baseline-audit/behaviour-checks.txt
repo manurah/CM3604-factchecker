@@ -1,0 +1,48 @@
+test_empty_fact_scores_zero (__main__.ExistingBehaviour) ... ok
+test_entailment_below_threshold (__main__.ExistingBehaviour) ... ok
+test_entailment_max_not_average_or_sum (__main__.ExistingBehaviour) ... ok
+test_entailment_no_evidence (__main__.ExistingBehaviour) ... ok
+test_entailment_threshold_equality (__main__.ExistingBehaviour) ... ok
+test_entailment_whitespace_only (__main__.ExistingBehaviour) ... ok
+test_f1_arithmetic (__main__.ExistingBehaviour) ... ok
+test_jaccard_arithmetic (__main__.ExistingBehaviour) ... ok
+test_lexical_empty_passages (__main__.ExistingBehaviour) ... ok
+test_lexical_partial_passages_not_added (__main__.ExistingBehaviour) ... ok
+test_lexical_single_support_among_unrelated_passages (__main__.ExistingBehaviour) ... ok
+test_lexical_threshold_equal_and_below (__main__.ExistingBehaviour) ... ok
+test_natural_evidence_case_preserved (__main__.ExistingBehaviour) ... ok
+test_pruning_disabled_reaches_model (__main__.ExistingBehaviour) ... ok
+test_recall_arithmetic (__main__.ExistingBehaviour) ... ok
+test_rouge_arithmetic (__main__.ExistingBehaviour) ... ok
+test_sentence_boundaries_and_cleaning_with_dataset_markup (__main__.ExistingBehaviour) ... FAIL
+test_sentence_boundaries_without_markup (__main__.ExistingBehaviour) ... ok
+test_unknown_scorer_rejected (__main__.ExistingBehaviour) ... ok
+test_zero_overlap_pruned_without_inference (__main__.ExistingBehaviour) ... ok
+
+======================================================================
+FAIL: test_sentence_boundaries_and_cleaning_with_dataset_markup (__main__.ExistingBehaviour)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/CM3604-factchecker/member_c/check_existing.py", line 141, in test_sentence_boundaries_and_cleaning_with_dataset_markup
+    self.assertEqual([p for p, _ in model.calls], ['Ada wrote notes.', 'She lived in London.'])
+AssertionError: Lists differ: ['<s>Ada wrote notes.</s><s>She lived in London.</s>'] != ['Ada wrote notes.', 'She lived in London.']
+
+First differing element 0:
+'<s>Ada wrote notes.</s><s>She lived in London.</s>'
+'Ada wrote notes.'
+
+Second list contains 1 additional elements.
+First extra element 1:
+'She lived in London.'
+
+- ['<s>Ada wrote notes.</s><s>She lived in London.</s>']
+?   ---                ^^^^^^^                    ----
+
++ ['Ada wrote notes.', 'She lived in London.']
+?                   ^^^^
+
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.006s
+
+FAILED (failures=1)

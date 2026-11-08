@@ -1,0 +1,144 @@
+{
+  "status": "AI-assisted historical review draft for Member C; fresh full-run reproduction and human review pending",
+  "threshold": 0.38,
+  "categories": {
+    "A": {
+      "name": "Role or entity-type inference beyond an explicit statement",
+      "definition": "The prediction relies on generalising an occupation, activity, location or entity mention to another role, type or broader claim. Such inferences may be plausible, but they disagree with the supplied NS label and do not establish the dataset's intended support criterion."
+    },
+    "B": {
+      "name": "Relevance-label or retrieved-evidence mismatch",
+      "definition": "The binary evaluation and the retrieved text appear to assess different things: an IR fact is scored as NS, or the text supports or disputes a claim differently from its gold label. Labels are retained unchanged; these observations do not prove that an annotation is wrong."
+    },
+    "C": {
+      "name": "Bibliographic attribution across lists and context",
+      "definition": "Support depends on connecting a work or series title in a bibliography or descriptive list to the author identified elsewhere in the article. A sentence-level premise may not state that author-work relation explicitly."
+    },
+    "D": {
+      "name": "Subject and relation expressed indirectly across wording or context",
+      "definition": "The relevant relation is expressed through a pronoun, name variant, paraphrase or contextual detail rather than a close single-sentence match to the claim. The error is associated with that evidence pattern; its precise cause cannot be established from maximum probabilities alone."
+    }
+  },
+  "records": [
+    {
+      "example_id": 2,
+      "category": "A",
+      "quote": "but McAndrew did not do her own singing in the film",
+      "explanation": "The passages describe McAndrew as an actress and explicitly state that she did not do her own singing in the cited film. Predicting the separate occupation singer fits role extrapolation despite this caveat; maximum-score aggregation can accept one apparently supportive span without reconciling opposing evidence, although the cached file does not identify the winning span."
+    },
+    {
+      "example_id": 5,
+      "category": "B",
+      "quote": "Trivisonno was born in East Cleveland, Ohio",
+      "explanation": "The original label is IR, which the driver converts to NS even though a geographic statement can receive strong entailment support. The retrieved passage mentions East Cleveland, Ohio; the counted error therefore involves relevance and geographic inference, not a demonstrated false real-world location."
+    },
+    {
+      "example_id": 8,
+      "category": "B",
+      "quote": "He contributed to the development and popularity of the hand held metal detector.",
+      "explanation": "The gold label is S, but the evidence says contributed to development and elsewhere disputes who invented the handheld detector. This differs from the stronger best known for inventing formulation, so the FN is recorded as a label/evidence mismatch rather than proof that the model ignored unequivocal support."
+    },
+    {
+      "example_id": 9,
+      "category": "B",
+      "quote": "the hand-held metal detector is disputed",
+      "explanation": "The supplied text disputes the inventor and discusses patenting, while the claim adds first and battery-operated. Those qualifications are not explicitly established by the retrieved passages, although the fixed gold label is S; the discrepancy is preserved and not repaired by relabelling."
+    },
+    {
+      "example_id": 34,
+      "category": "A",
+      "quote": "Tusa promoted excavations in the archaeological sites of Soluntum, Segesta, Selinunte, Motya, Marsala.",
+      "explanation": "The text describes archaeological excavations and promotion of a magazine, while the claim summarises these as various cultural initiatives. This is a broad activity-level generalisation rather than the same explicit proposition, and it is counted as FP against the supplied NS label."
+    },
+    {
+      "example_id": 40,
+      "category": "A",
+      "quote": "was a French engraver.",
+      "explanation": "The source identifies Daullé as an engraver, whereas the claim uses the broader occupational term printmaker. That type inference is semantically plausible, so the FP should not be described as an obvious factual hallucination; it remains a mismatch with the supplied NS label."
+    },
+    {
+      "example_id": 41,
+      "category": "D",
+      "quote": "He engraved several portraits and plates of historical and other subjects",
+      "explanation": "The passage describes portrait engraving through the pronoun He, rather than saying directly that Jean Daullé was known for his portraits. Subject resolution and the change from producing portraits to being known for them are contextual and relational gaps associated with this FN."
+    },
+    {
+      "example_id": 77,
+      "category": "C",
+      "quote": "\"The Taker Trilogy\" tells the story of a young woman",
+      "explanation": "The evidence describes The Taker Trilogy and lists its component titles under Katsu's bibliography instead of stating the claim as a direct author-work sentence. The claim also calls a trilogy a novel, so the fixed S label should not be presented as unambiguous textual entailment."
+    },
+    {
+      "example_id": 78,
+      "category": "C",
+      "quote": "Bibliography.:Standalone novels. - \"The Hunger\", Transworld, March 2018",
+      "explanation": "The Hunger occurs in a standalone-novels bibliography within the Alma Katsu article, but the list entry does not repeat Katsu's name. Interpreting the title as her novel requires list-heading and article context, making this a bibliographic-attribution FN."
+    },
+    {
+      "example_id": 79,
+      "category": "C",
+      "quote": "\"The Deep\", Transworld, March 2020",
+      "explanation": "The Deep appears under the article's standalone-novels heading, and a separate passage calls it a finalist for novel awards. The author-work relation is distributed across article context, a list and another sentence rather than stated with Katsu in one direct premise, which fits bibliographic attribution failure."
+    },
+    {
+      "example_id": 80,
+      "category": "C",
+      "quote": "\"Red Widow\", G.P. Putnam's Sons, March 2021",
+      "explanation": "Red Widow is listed under standalone novels in the Alma Katsu bibliography. The entry supplies a title, publisher and date without repeating the author, so a sentence-level classifier must recover author attribution from the surrounding article context."
+    },
+    {
+      "example_id": 99,
+      "category": "D",
+      "quote": "Between 1986 and 1989, Malcolm a pastor of the Jerusalem Christian Assembly.",
+      "explanation": "The retrieved text expresses the pastoral role in a grammatically incomplete sentence and gives dates, while the claim uses He and the vague duration many years. Resolving the subject and relating the date interval to that duration requires contextual interpretation; the gold S label is retained without claiming an exact causal diagnosis."
+    },
+    {
+      "example_id": 105,
+      "category": "A",
+      "quote": "She also delivers awareness raising sessions to doctors and the Police",
+      "explanation": "The passage lists schools, doctors, police and mediator/educator activities, but the claim compresses this into worked with a number of organizations. The generalisation is plausible, yet the benchmark label is NS, so this FP is an activity-to-broader-role inference rather than an established false biography detail."
+    },
+    {
+      "example_id": 109,
+      "category": "A",
+      "quote": "born 26 October 1949 Baramulla, Kashmir, India",
+      "explanation": "The evidence gives Kakru's birthplace in Kashmir, whereas Kashmiri can denote a regional identity or ethnicity. Moving from birthplace to that identity is an attribute inference; the high cached probability does not resolve the intended interpretation or override the supplied NS label."
+    },
+    {
+      "example_id": 121,
+      "category": "D",
+      "quote": "was an American artist most widely known for his 1957 creation of the plastic pink flamingo",
+      "explanation": "The passage supports creation using Donald Featherstone, while the claim uses Don Featherstone and adds lawn ornament; lawn context occurs elsewhere. This requires a name-variant match and a relation paraphrase with contextual detail, despite the clearly relevant retrieved evidence."
+    },
+    {
+      "example_id": 122,
+      "category": "A",
+      "quote": "he directed the BYU Biomedical Imaging Lab, and performed research on scanning impedance imaging.",
+      "explanation": "The evidence explicitly reports research at BYU and separately lists several career roles and organisations. The claim expands this into working as a researcher at various organizations, a stronger multi-organisation role claim than that single research statement establishes."
+    },
+    {
+      "example_id": 124,
+      "category": "A",
+      "quote": "Oliphant has a Ph.D. in Biomedical Engineering from the Mayo Clinic",
+      "explanation": "The passage mentions Mayo Clinic as a degree-granting institution without directly asserting the entity type organization. Inferring that type is reasonable in ordinary language, so this is a type-inference disagreement with the supplied NS annotation rather than evidence that the real-world claim is false."
+    },
+    {
+      "example_id": 133,
+      "category": "B",
+      "quote": "is a Canadian former military sniper",
+      "explanation": "The source explicitly identifies Rob Furlong as a former military sniper, which supports the claim if He refers to Furlong. Because the stored gold label is NS, this FP exposes a possible annotation or subject-context mismatch; it must not be explained as absence of sniper evidence."
+    },
+    {
+      "example_id": 141,
+      "category": "B",
+      "quote": "born in Maracaibo, Venezuela on 14 August 1987",
+      "explanation": "The gold-supported claim gives 18 July 1987, but the supplied Jessica Barboza passage gives 14 August 1987. The low entailment score is compatible with rejecting that conflicting date, although it is still an FN under the fixed evaluation labels; the original labels are not changed."
+    },
+    {
+      "example_id": 168,
+      "category": "A",
+      "quote": "is an Australian rapper.",
+      "explanation": "The source describes Kerser as a rapper and discusses recordings, albums and diss tracks, while the claim assigns the distinct role songwriter. The cached S decision fits a related-role inference, but the passages do not directly establish songwriting and the supplied label is NS."
+    }
+  ]
+}
