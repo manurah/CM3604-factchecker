@@ -1,0 +1,20 @@
+{
+  ".gitignore": "6205363186a407a72298549cbb9bca6b975a8fa0d3e0829b3cf09981b9fe09a9",
+  "Instructions/CW.pdf": "23974402e165b5bb99a88b2a6734c6fc09222db805f067a816656c7e202b9c45",
+  "Instructions/guidance.txt": "12c9d536aef02b5dbfd6d383879b3b4101e2d1e4f7f811fc5abed5d4a2802cda",
+  "Instructions/october_team_execution_guide.pdf": "1a5f6bf50b6b1182382a54231eff5ff2bab1031b1b8eb78f649cf14c9aff6dfe",
+  "LICENSE": "e9e16ecb5e67192068da80d1fb482c84a056d900c199b4fda9352a730d08b699",
+  "PART2_HANDOFF.md": "37b7343b31261adb333814dcdc3a373bda06bcf455b2e6e44a19788f22d3a144",
+  "README.md": "8392cf655791312be15190ab1bbbc0eca24ea439763b5a645f77d4f16755913c",
+  "data/FACTSCORE-LICENSE.txt": "a12c3d66c90212bd599fb4c7c2e771d79440c84b3a229f9164cf20f59411c140",
+  "data/dev_labeled_ChatGPT.jsonl": "e3fc8f4d1e6377009782d3581bce4817a37b5725adfc3eaaa1ad760829eac172",
+  "data/passages_bm25_ChatGPT_humfacts.jsonl": "cade871bbc4531a651588fbbe2232a03bf305e2e1c4f7cf33a48b41db961c264",
+  "evaluate_entailment.py": "7a33a1df2f5a4306578a66f5c472c8f2c319946823e0f03a575a8db6e20329ee",
+  "factcheck.py": "35d48b3e6a841320f3f26ff05538ed15909ccbbdd87a6a0b19612cf21294a37a",
+  "factchecking_main.py": "5c40a1ec1a41cbdb8a9655377fe46cefcf2feceba57026a12d2a340eec5783b8",
+  "inspect_entailment.py": "8eabc08cf372eb1108cb49dbaf00f3c9fc299f721c0f7664df83786c68fae56d",
+  "requirements.txt": "bfb1f4f8c4db403b75675f86f31cc9e68a3c6ab3730a62ed8f47ad5a365884f9",
+  "results/entailment_pruning_005_scores.json": "4b43b0828f8fb8d7f39df5360965fee8ddc404934e1415935268596941ca3d20",
+  "results/entailment_pruning_005_thresholds.csv": "955fef3badce2106e7347f4a0b6b71fe5b4f49358a5b6bc5cac6b2426d4a6993",
+  "threshold_sweep.py": "77d19c0c48852adfc4934334dc91e79cbfbf2b26d479882523627c3a6e0f5665"
+}

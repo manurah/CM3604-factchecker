@@ -1,0 +1,23 @@
+usage: evaluate_pruning.py [-h] --output OUTPUT [--model MODEL]
+                           [--local-files-only] [--limit LIMIT]
+                           [--threads THREADS] [--threshold THRESHOLD]
+                           [--pruning-threshold PRUNING_THRESHOLD]
+                           [--order {pruned-first,unpruned-first}]
+
+Reproduce C's pruning comparison without changing the coursework driver. Both
+variants use the same checkpoint and decision threshold. A forward hook also
+records the discrete decision from the SAME logits, without a second model
+call. Output directories must be new so historical evidence is never
+overwritten.
+
+options:
+  -h, --help            show this help message and exit
+  --output OUTPUT       New directory; existing directories are refused.
+  --model MODEL         Public checkpoint name or a local checkpoint
+                        directory.
+  --local-files-only
+  --limit LIMIT         Debug subset only; omit for full evaluation.
+  --threads THREADS
+  --threshold THRESHOLD
+  --pruning-threshold PRUNING_THRESHOLD
+  --order {pruned-first,unpruned-first}

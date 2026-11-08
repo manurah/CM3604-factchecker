@@ -1,0 +1,554 @@
+{
+  "status": "AI-assisted historical review draft for Member C; fresh full-run reproduction and human review pending",
+  "source_sha256": "4b43b0828f8fb8d7f39df5360965fee8ddc404934e1415935268596941ca3d20",
+  "fresh_model_run_verified": false,
+  "threshold": 0.38,
+  "categories": {
+    "A": {
+      "name": "Role or entity-type inference beyond an explicit statement",
+      "definition": "The prediction relies on generalising an occupation, activity, location or entity mention to another role, type or broader claim. Such inferences may be plausible, but they disagree with the supplied NS label and do not establish the dataset's intended support criterion."
+    },
+    "B": {
+      "name": "Relevance-label or retrieved-evidence mismatch",
+      "definition": "The binary evaluation and the retrieved text appear to assess different things: an IR fact is scored as NS, or the text supports or disputes a claim differently from its gold label. Labels are retained unchanged; these observations do not prove that an annotation is wrong."
+    },
+    "C": {
+      "name": "Bibliographic attribution across lists and context",
+      "definition": "Support depends on connecting a work or series title in a bibliography or descriptive list to the author identified elsewhere in the article. A sentence-level premise may not state that author-work relation explicitly."
+    },
+    "D": {
+      "name": "Subject and relation expressed indirectly across wording or context",
+      "definition": "The relevant relation is expressed through a pronoun, name variant, paraphrase or contextual detail rather than a close single-sentence match to the claim. The error is associated with that evidence pattern; its precise cause cannot be established from maximum probabilities alone."
+    }
+  },
+  "records": [
+    {
+      "example_id": 2,
+      "fact": "Marianne McAndrew is a singer.",
+      "original_label": "NS",
+      "gold": "NS",
+      "score": 0.8949199318885803,
+      "passages": [
+        {
+          "title": "Marianne McAndrew",
+          "text": "<s>Marianne McAndrew Marianne Christine McAndrew is an actress known for her role as Irene Molloy in the film \"Hello, Dolly!\"</s><s>Career. \"Hello, Dolly!\" was McAndrew's first credited film role. The role of Irene Molloy was given considerably more attention in the film than in earlier Broadway productions. \"Hello, Dolly!\" earned McAndrew two Golden Globe nominations in 1969; Golden Globe Award for Best Supporting Actress – Motion Picture and the since discontinued Golden Globe Award for New Star of the Year – Actress, as well as generally good reviews. She landed a starring (second billed) role in her next film (\"The Seven Minutes\"). By 1971, she had made appearances in popular TV shows including \"Hawaii 5-0\", \"Mannix\", \"Cannon\" and \"Love, American Style\" One notable later film role was her co-starring role in \"The Bat People\", with her husband Stewart Moss. The film was widely panned, but is still somewhat known today as a \"bad film\". \"The Bat People\" was also her last film released in theaters; she has only worked in television since its release. Her only other later role of particular note is her role of"
+        },
+        {
+          "title": "Marianne McAndrew",
+          "text": " Doris Williams in \"Growing Up Brady\", a TV film about the popular show. McAndrew, along with everything else related to the film \"Hello, Dolly!\" experienced something of a resurgence in popularity with the release of \"WALL-E\", which featured clips from the film, including a duet with McAndrew's character (but McAndrew did not do her own singing in the film, which some news outlets claimed in articles about \"WALL-E\").</s><s>Personal life. McAndrew married actor Stewart Moss in 1968, remaining married until his death in 2017. They starred together in \"The Bat People\". McAndrew has two brothers.</s><s>Awards and honors. \"Hello, Dolly!\" earned McAndrew two Golden Globe nominations in 1969; Golden Globe Award for Best Supporting Actress – Motion Picture and the since discontinued Golden Globe Award for New Star of the Year – Actress.</s><s>References.</s>"
+        }
+      ],
+      "category": "A",
+      "quote": "but McAndrew did not do her own singing in the film",
+      "explanation": "The passages describe McAndrew as an actress and explicitly state that she did not do her own singing in the cited film. Predicting the separate occupation singer fits role extrapolation despite this caveat; maximum-score aggregation can accept one apparently supportive span without reconciling opposing evidence, although the cached file does not identify the winning span.",
+      "prediction": "S",
+      "error_type": "FP",
+      "human_review_accepted": false
+    },
+    {
+      "example_id": 5,
+      "fact": "Cleveland is in Ohio.",
+      "original_label": "IR",
+      "gold": "NS",
+      "score": 0.9936135411262512,
+      "passages": [
+        {
+          "title": "Mike Trivisonno",
+          "text": " Cleveland's eastern suburbs. He was married to his high school sweetheart Linda Conforto, who died of lung and brain cancer in 2009, at age 61. The couple have three children, two sons and a daughter, and two grandchildren. On April 1, 2011, Trivisonno married his girlfriend, Tami in Las Vegas. His brother, Gary, a golfer, was also a radio personality on WTAM, hosting a weekly golf show. His son, Michael Jr., owns an upscale restaurant called Trivs in suburban Strongsville, Ohio. He died unexpectedly on October 28, 2021, at the age of 74. The cause of death is unknown.</s>"
+        },
+        {
+          "title": "Mike Trivisonno",
+          "text": "<s>Mike Trivisonno Mike Trivisonno (September 20, 1947 – October 28, 2021) was an American radio broadcaster, known for hosting his own self-titled afternoon talk show on Cleveland radio station WTAM AM 1100. He was widely referred to simply as \"Triv\" by callers and the Cleveland media.</s><s>Career. He was a frequent caller on the \"Sportsline\" radio show on WTAM AM 1100 (during this period the station was operating under the WWWE call letters). The show was hosted by the acerbic Pete Franklin and dealt with Cleveland sports. Franklin, who would typically cut off most callers, began giving \"Mike from Mayfield\" some latitude due to knowledgeable commentary, particularly regarding the Cleveland Browns. Franklin began mockingly referring to Trivisonno as \"Mr. Know It All,\" a moniker he would carry into his own radio career. Trivisonno eventually began his own broadcasting career in 1987, working for a time at WNCX, commenting on sports (particularly boxing) and becoming a full-time personality from 1989–1992. He began hosting \"Sportsline\" on WWWE in 1994. At first, the show aired from 6-11 p.m. The show did well"
+        },
+        {
+          "title": "Mike Trivisonno",
+          "text": " in the ratings, even though it was usually up against Cleveland Indians games on WKNR. It did so well, the decision was made to put Trivisonno in afternoon drive-time (under the \"Sportsline\" banner until 1998; under his own name since) ultimately leaving \"Sportsline\" to other hosts. Throughout the program's history, \"The Mike Trivisonno Show\" was usually either first or second in ratings in its time slot in the market. His show had been originally dedicated mostly to sports, but over time became a forum for discussing sports, politics, local issues, current events, or whatever else was on Trivisonno's mind at the time. He discussed topics (and frequently argued) with listeners who called in to the show and/or with his various producers and sidekicks that worked alongside him. Trivisonno's popularity and high ratings led him to be ranked numerous times among \"Talkers Magazine's\" \"Heavy Hundred\", including most recently in 2015, when he came in at #72. He was also a nominee for the Large Market Personality of the Year Marconi Award in 2010.</s><s>Personal life. Trivisonno was born in East Cleveland, Ohio, and attended Mayfield High School in"
+        }
+      ],
+      "category": "B",
+      "quote": "Trivisonno was born in East Cleveland, Ohio",
+      "explanation": "The original label is IR, which the driver converts to NS even though a geographic statement can receive strong entailment support. The retrieved passage mentions East Cleveland, Ohio; the counted error therefore involves relevance and geographic inference, not a demonstrated false real-world location.",
+      "prediction": "S",
+      "error_type": "FP",
+      "human_review_accepted": false
+    },
+    {
+      "example_id": 8,
+      "fact": "Gerhard Fischer is best known for inventing a metal detector.",
+      "original_label": "S",
+      "gold": "S",
+      "score": 0.003192933974787593,
+      "passages": [
+        {
+          "title": "Gerhard Fischer (inventor)",
+          "text": "<s>Gerhard Fischer (inventor) Gerhard Julius Richard Fischer later Gerhard Julius Richard Fisher, Gerhard R. Fisher (March 18, 1899 – May 2, 1988) was a U.S. entrepreneur of German descent. He contributed to the development and popularity of the hand held metal detector.</s><s>Biography. Fisher was born in 1899 in Landeshut, Silesia, to Richard Hugo Georg Arthur Fischer, an engineer, and his wife Margaretha Julia Fischer née Job. His mother was from Łódź, where the parents also married. Around 1906, the Fischer family moved to Dresden. After studying electrical engineering at the Dresden University, Fischer emigrated to the U.S. In 1931, he founded Fisher Research Laboratory, Inc. in Palo Alto, where he served as president until his retirement in 1967. While working with aircraft radio detection finders environment-dependent changes became apparent. From the interference by metal, he concluded that the device must also be suitable for detecting metal. Fisher shared the idea with Albert Einstein who correctly predicted the proliferation of hand held metal detector use. In 1937, he patented his metal detector. He died 1988 in Palo Alto.</s><s>Biography.:Inventions. Although the actual inventor of"
+        },
+        {
+          "title": "Gerhard Fischer (inventor)",
+          "text": " the hand-held metal detector is disputed, the hand-held metal detector was made in 1925 and was first patented by Dr. Gerhard Fisher in 1931. A metal detector had been invented some forty years earlier (1881) by Alexander Graham Bell for the sole purpose of locating a lead bullet in President James A. Garfield.</s><s>Biography.:Fisher Research Laboratory. He founded \"Fisher Research Laboratory\" to develop and market the hand held metal detectors in 1931.</s><s>References. - - -</s>"
+        }
+      ],
+      "category": "B",
+      "quote": "He contributed to the development and popularity of the hand held metal detector.",
+      "explanation": "The gold label is S, but the evidence says contributed to development and elsewhere disputes who invented the handheld detector. This differs from the stronger best known for inventing formulation, so the FN is recorded as a label/evidence mismatch rather than proof that the model ignored unequivocal support.",
+      "prediction": "NS",
+      "error_type": "FN",
+      "human_review_accepted": false
+    },
+    {
+      "example_id": 9,
+      "fact": "Gerhard Fischer invented the first handheld, battery-operated metal detector.",
+      "original_label": "S",
+      "gold": "S",
+      "score": 0.00452945102006197,
+      "passages": [
+        {
+          "title": "Gerhard Fischer (inventor)",
+          "text": " the hand-held metal detector is disputed, the hand-held metal detector was made in 1925 and was first patented by Dr. Gerhard Fisher in 1931. A metal detector had been invented some forty years earlier (1881) by Alexander Graham Bell for the sole purpose of locating a lead bullet in President James A. Garfield.</s><s>Biography.:Fisher Research Laboratory. He founded \"Fisher Research Laboratory\" to develop and market the hand held metal detectors in 1931.</s><s>References. - - -</s>"
+        },
+        {
+          "title": "Gerhard Fischer (inventor)",
+          "text": "<s>Gerhard Fischer (inventor) Gerhard Julius Richard Fischer later Gerhard Julius Richard Fisher, Gerhard R. Fisher (March 18, 1899 – May 2, 1988) was a U.S. entrepreneur of German descent. He contributed to the development and popularity of the hand held metal detector.</s><s>Biography. Fisher was born in 1899 in Landeshut, Silesia, to Richard Hugo Georg Arthur Fischer, an engineer, and his wife Margaretha Julia Fischer née Job. His mother was from Łódź, where the parents also married. Around 1906, the Fischer family moved to Dresden. After studying electrical engineering at the Dresden University, Fischer emigrated to the U.S. In 1931, he founded Fisher Research Laboratory, Inc. in Palo Alto, where he served as president until his retirement in 1967. While working with aircraft radio detection finders environment-dependent changes became apparent. From the interference by metal, he concluded that the device must also be suitable for detecting metal. Fisher shared the idea with Albert Einstein who correctly predicted the proliferation of hand held metal detector use. In 1937, he patented his metal detector. He died 1988 in Palo Alto.</s><s>Biography.:Inventions. Although the actual inventor of"
+        }
+      ],
+      "category": "B",
+      "quote": "the hand-held metal detector is disputed",
+      "explanation": "The supplied text disputes the inventor and discusses patenting, while the claim adds first and battery-operated. Those qualifications are not explicitly established by the retrieved passages, although the fixed gold label is S; the discrepancy is preserved and not repaired by relabelling.",
+      "prediction": "NS",
+      "error_type": "FN",
+      "human_review_accepted": false
+    },
+    {
+      "example_id": 34,
+      "fact": "Tusa has been involved in various cultural initiatives.",
+      "original_label": "NS",
+      "gold": "NS",
+      "score": 0.4034978151321411,
+      "passages": [
+        {
+          "title": "Vincenzo Tusa",
+          "text": " Sicilian Region has dedicated the \"Cave Archeology Area of Cusa Vincenzo Tusa\".</s><s>Works. - L'urbanistica di Solunto, 1970 - Anastylosis ad Agrigento Tempio di Eracle e Selinunte Tempio C, 1975 - La scultura in pietra di Selinunte, 1984 - La preistoria in Sicilia, 1987 - Selinunte nella mia vita, 1990 - Segesta, 1991 - Siciliani illustri: Antonino Salinas, 1995 - Sarcofagi romani in Sicilia, 1995 - Il parco archeologico di Selinunte, 2011</s><s>References.</s>"
+        },
+        {
+          "title": "Vincenzo Tusa",
+          "text": "<s>Vincenzo Tusa Vincenzo Tusa (12 July 1920 – 5 March 2009) was an Italian archeologist.</s><s>Biography. After studying in Mistretta, Tusa graduated in Literature in Catania in 1944 and became an assistant in Archeology. In 1947. He was hired by the Superintendency of Antiquities in Bologna and two years later he was transferred to Palermo. In 1963 he assumed the post of Superintendent for the BBCC of western Sicily. Tusa promoted excavations in the archaeological sites of Soluntum, Segesta, Selinunte, Motya, Marsala. In the 60's Tusa was the promoter of the \"Sicilia Archeologica\" magazine. From 1964 to 1991 he was also professor of Punic Antiquities at the Faculty of Letters of the University of Palermo. He was a member of the Accademia dei Lincei in the Moral Sciences class for the Archeology category. His son Sebastiano Tusa, also an archaeologist, was head of the Superintendency for the Sea of the Sicilian Region. His name appears on the list of members of the Masonic lodge P2.</s><s>Acknowledgments. In Tusa the"
+        }
+      ],
+      "category": "A",
+      "quote": "Tusa promoted excavations in the archaeological sites of Soluntum, Segesta, Selinunte, Motya, Marsala.",
+      "explanation": "The text describes archaeological excavations and promotion of a magazine, while the claim summarises these as various cultural initiatives. This is a broad activity-level generalisation rather than the same explicit proposition, and it is counted as FP against the supplied NS label.",
+      "prediction": "S",
+      "error_type": "FP",
+      "human_review_accepted": false
+    },
+    {
+      "example_id": 40,
+      "fact": "Jean Daullé was a printmaker.",
+      "original_label": "NS",
+      "gold": "NS",
+      "score": 0.925237238407135,
+      "passages": [
+        {
+          "title": "Jean Daullé",
+          "text": "<s>Jean Daullé Jean Daullé (18 May 1703 – 23 April 1763) was a French engraver.</s><s>Biography. He was the son of Jean Daullé, a silversmith, and his wife, Anne née Dennel. At the age of fourteen, he received training from an engraver named Robart, at the priory of Saint-Pierre d'Abbeville. He then went to Paris, and worked at the studios of Robert Hecquet (1693-1775), who was also originally from Picardy. In 1735, his work attracted the attention of the engraver and merchant, Pierre-Jean Mariette, who provided him with professional recommendations. Soon after, he was approached by the painter, Hyacinthe Rigaud, who wanted to make him his official engraver. In 1742, Daullé was received at the Académie Royale de Peinture et de Sculpture, with his presentation, \"Hyacinthe Rigaud Painting his Wife\", after a work by Rigaud. He was also admitted as a member of the academy in Augsbourg. Eventually named \"Engraver to the King\","
+        },
+        {
+          "title": "Jean Daullé",
+          "text": " he trained the future publisher and print dealer, Pierre-François Basan, as well as the German engraver Jean-Georges Wille. Around 1745, he married Gabrielle-Anne Landry and they had five children. Overwhelmed by his large family, his work suffered.</s><s>Work. He engraved several portraits and plates of historical and other subjects, which are chiefly executed with the graver in a clear and firm style, which entitles him to rank with the ablest artists of his time. He marked his works J. D. The following are his principal plates:</s><s>Work.:Portraits. - \"Catherine, Countess of Feuquières, daughter of Pierre Mignard\"; after Mignard. - \"Hyacinthe Rigaud, painter\"; after Rigaud; engraved for his reception at the Academy in 1742. - \"Marguerite de Valois, Countess of Caylus\"; after the same. - \"Charles Edward Stuart, son of the Pretender\". - \"Clementina, Princess of Poland, his consort\"; after David. - \"Madame Favart, in the part of 'Bastienne;' \" after Carle van Loo."
+        },
+        {
+          "title": "Jean Daullé",
+          "text": " - \"Claude Deshayes Gendron, oculist\"; after Rigaud. - \"Jean Baptiste Rousseau\"; after Aved. - \"Jean Mariette, engraver\"; after Pesne.</s><s>Work.:Subjects after various masters. - \"The Magdalen\"; after Correggio; for the Dresden Gallery. - \"Diogenes with his Lantern\"; after Spagnoletto; for the same. - \"Quos Ego\"; after Rubens. - \"The Two Sons of Rubens\"; after the same; for the Dresden Gallery. - \"Neptune appeasing the Tempest\"; after the same. - \"Charity with Three Children\"; after Albani. - \"The Triumph of Venus\"; after Boucher. - \"Les Amusemens de la Campagne\"; after Boucher. - \"Latona\"; after J. Jouvenet. - \"Four Marine subjects\"; after Joseph Vernet. - \"The Bath of Venus\"; after Raoux. - \"Two subjects\"; after G. Metsu. - \"Jupiter and Calisto\"; after N. Poussin. - \"St. Margaret\"; after Correggio. - \"Child playing with Cupid\";"
+        },
+        {
+          "title": "Jean Daullé",
+          "text": " after Van Dyck. A detailed account of this artist's works is contained in Delignière's 'Catalogue raisonné de l'oeuvre gravé de Jean Daullé d' Abbeville,' 1872, 8vo.</s><s>References. - - Attribution:</s>"
+        }
+      ],
+      "category": "A",
+      "quote": "was a French engraver.",
+      "explanation": "The source identifies Daullé as an engraver, whereas the claim uses the broader occupational term printmaker. That type inference is semantically plausible, so the FP should not be described as an obvious factual hallucination; it remains a mismatch with the supplied NS label.",
+      "prediction": "S",
+      "error_type": "FP",
+      "human_review_accepted": false
+    },
+    {
+      "example_id": 41,
+      "fact": "Jean Daullé was known for his portraits.",
+      "original_label": "S",
+      "gold": "S",
+      "score": 0.14518781006336212,
+      "passages": [
+        {
+          "title": "Jean Daullé",
+          "text": "<s>Jean Daullé Jean Daullé (18 May 1703 – 23 April 1763) was a French engraver.</s><s>Biography. He was the son of Jean Daullé, a silversmith, and his wife, Anne née Dennel. At the age of fourteen, he received training from an engraver named Robart, at the priory of Saint-Pierre d'Abbeville. He then went to Paris, and worked at the studios of Robert Hecquet (1693-1775), who was also originally from Picardy. In 1735, his work attracted the attention of the engraver and merchant, Pierre-Jean Mariette, who provided him with professional recommendations. Soon after, he was approached by the painter, Hyacinthe Rigaud, who wanted to make him his official engraver. In 1742, Daullé was received at the Académie Royale de Peinture et de Sculpture, with his presentation, \"Hyacinthe Rigaud Painting his Wife\", after a work by Rigaud. He was also admitted as a member of the academy in Augsbourg. Eventually named \"Engraver to the King\","
+        },
+        {
+          "title": "Jean Daullé",
+          "text": " he trained the future publisher and print dealer, Pierre-François Basan, as well as the German engraver Jean-Georges Wille. Around 1745, he married Gabrielle-Anne Landry and they had five children. Overwhelmed by his large family, his work suffered.</s><s>Work. He engraved several portraits and plates of historical and other subjects, which are chiefly executed with the graver in a clear and firm style, which entitles him to rank with the ablest artists of his time. He marked his works J. D. The following are his principal plates:</s><s>Work.:Portraits. - \"Catherine, Countess of Feuquières, daughter of Pierre Mignard\"; after Mignard. - \"Hyacinthe Rigaud, painter\"; after Rigaud; engraved for his reception at the Academy in 1742. - \"Marguerite de Valois, Countess of Caylus\"; after the same. - \"Charles Edward Stuart, son of the Pretender\". - \"Clementina, Princess of Poland, his consort\"; after David. - \"Madame Favart, in the part of 'Bastienne;' \" after Carle van Loo."
+        },
+        {
+          "title": "Jean Daullé",
+          "text": " - \"Claude Deshayes Gendron, oculist\"; after Rigaud. - \"Jean Baptiste Rousseau\"; after Aved. - \"Jean Mariette, engraver\"; after Pesne.</s><s>Work.:Subjects after various masters. - \"The Magdalen\"; after Correggio; for the Dresden Gallery. - \"Diogenes with his Lantern\"; after Spagnoletto; for the same. - \"Quos Ego\"; after Rubens. - \"The Two Sons of Rubens\"; after the same; for the Dresden Gallery. - \"Neptune appeasing the Tempest\"; after the same. - \"Charity with Three Children\"; after Albani. - \"The Triumph of Venus\"; after Boucher. - \"Les Amusemens de la Campagne\"; after Boucher. - \"Latona\"; after J. Jouvenet. - \"Four Marine subjects\"; after Joseph Vernet. - \"The Bath of Venus\"; after Raoux. - \"Two subjects\"; after G. Metsu. - \"Jupiter and Calisto\"; after N. Poussin. - \"St. Margaret\"; after Correggio. - \"Child playing with Cupid\";"
+        },
+        {
+          "title": "Jean Daullé",
+          "text": " after Van Dyck. A detailed account of this artist's works is contained in Delignière's 'Catalogue raisonné de l'oeuvre gravé de Jean Daullé d' Abbeville,' 1872, 8vo.</s><s>References. - - Attribution:</s>"
+        }
+      ],
+      "category": "D",
+      "quote": "He engraved several portraits and plates of historical and other subjects",
+      "explanation": "The passage describes portrait engraving through the pronoun He, rather than saying directly that Jean Daullé was known for his portraits. Subject resolution and the change from producing portraits to being known for them are contextual and relational gaps associated with this FN.",
+      "prediction": "NS",
+      "error_type": "FN",
+      "human_review_accepted": false
+    },
+    {
+      "example_id": 77,
+      "fact": "The Taker trilogy is a novel by Katsu.",
+      "original_label": "S",
+      "gold": "S",
+      "score": 0.017982492223381996,
+      "passages": [
+        {
+          "title": "Alma Katsu",
+          "text": "<s>Alma Katsu Alma Katsu (born 1959) is an American writer of adult fiction. Her books have been translated into over a dozen languages, and has been published in the United Kingdom, Brazil, Spain and Italy. Katsu has also had a 29-year career in the US federal government working in a number of positions dealing with intelligence and foreign policy, with an emphasis on technology issues. She previously worked as a senior policy analyst for the RAND Corporation.</s><s>Biography. Katsu was born in Fairbanks, Alaska, the daughter of an American-born father and a Japanese-born mother. She spent the majority of her youth living near Concord, Massachusetts, to which she attributes her interest in the early American history featured in her novels. She attended Brandeis University (BA in literature and writing, 1981) where she studied with novelist John Irving and children's book author Margaret Rey, and the Johns Hopkins University (MA in Fiction, 2004). She is also an alumna of the Squaw Valley writers workshops.</s><s>Career. Katsu's writing has received praise for its quality and ability to create authentic and realistic settings. She published her first novel, \"The Taker,\" in 2011 through Gallery Books. It received praise from outlets such"
+        },
+        {
+          "title": "Alma Katsu",
+          "text": "'s Scribe\", Gallery Books, 2012 (ASIN B006VFZPNU) - \"Pipefitter's Union\", in anthology \"Enhanced Gravity\", Paycock Press ()</s><s>Awards. \"The Taker\" was named one of the ten best debut novels of 2011 by \"Booklist\" magazine, the publication of the American Library Association. The second novel, \"The Reckoning\", was nominated for several year-end awards including Goodreads Readers Choice Award for best paranormal fantasy and RT Book Reviews Reviewers Choice Award for best paranormal romance. \"The Deep\" was a finalist for the Bram Stoker Award for Superior Achievement in a Novel and a finalist for the Locus Award for Best Horror Novel.</s>"
+        },
+        {
+          "title": "Alma Katsu",
+          "text": " as \"Booklist\" and \"The Washington Post\" and was recognized as one of the ten best debut novels of the year by the American Library Association. Described as a literary take on the Faustian bargain, \"The Taker Trilogy\" tells the story of a young woman who has been given eternal life but comes to see this condition as a punishment for evil acts she perpetrated in life and is now condemned to revisit until the end of time.</s><s>Personal life. She lives in the Washington, DC area with her husband, musician Bruce Katsu.</s><s>Bibliography.</s><s>Bibliography.:Taker trilogy. - \"The Taker\", Gallery Books, 2011 () - \"The Reckoning\", Gallery Books, 2012 () - \"The Descent\", Gallery Books, 2014 ()</s><s>Bibliography.:Standalone novels. - \"The Hunger\", Transworld, March 2018 () - \"The Deep\", Transworld, March 2020 () - \"Red Widow\", G.P. Putnam's Sons, March 2021 ()</s><s>Bibliography.:Short stories. - \"The Witch Sisters,\" 2013 (ASIN B008N1YHPM) - \"The Marriage Price\", 2012 (ASIN B00B0QITYC) - \"The Devil"
+        }
+      ],
+      "category": "C",
+      "quote": "\"The Taker Trilogy\" tells the story of a young woman",
+      "explanation": "The evidence describes The Taker Trilogy and lists its component titles under Katsu's bibliography instead of stating the claim as a direct author-work sentence. The claim also calls a trilogy a novel, so the fixed S label should not be presented as unambiguous textual entailment.",
+      "prediction": "NS",
+      "error_type": "FN",
+      "human_review_accepted": false
+    },
+    {
+      "example_id": 78,
+      "fact": "The Hunger is a novel by Katsu.",
+      "original_label": "S",
+      "gold": "S",
+      "score": 0.00604570796713233,
+      "passages": [
+        {
+          "title": "Alma Katsu",
+          "text": "<s>Alma Katsu Alma Katsu (born 1959) is an American writer of adult fiction. Her books have been translated into over a dozen languages, and has been published in the United Kingdom, Brazil, Spain and Italy. Katsu has also had a 29-year career in the US federal government working in a number of positions dealing with intelligence and foreign policy, with an emphasis on technology issues. She previously worked as a senior policy analyst for the RAND Corporation.</s><s>Biography. Katsu was born in Fairbanks, Alaska, the daughter of an American-born father and a Japanese-born mother. She spent the majority of her youth living near Concord, Massachusetts, to which she attributes her interest in the early American history featured in her novels. She attended Brandeis University (BA in literature and writing, 1981) where she studied with novelist John Irving and children's book author Margaret Rey, and the Johns Hopkins University (MA in Fiction, 2004). She is also an alumna of the Squaw Valley writers workshops.</s><s>Career. Katsu's writing has received praise for its quality and ability to create authentic and realistic settings. She published her first novel, \"The Taker,\" in 2011 through Gallery Books. It received praise from outlets such"
+        },
+        {
+          "title": "Alma Katsu",
+          "text": "'s Scribe\", Gallery Books, 2012 (ASIN B006VFZPNU) - \"Pipefitter's Union\", in anthology \"Enhanced Gravity\", Paycock Press ()</s><s>Awards. \"The Taker\" was named one of the ten best debut novels of 2011 by \"Booklist\" magazine, the publication of the American Library Association. The second novel, \"The Reckoning\", was nominated for several year-end awards including Goodreads Readers Choice Award for best paranormal fantasy and RT Book Reviews Reviewers Choice Award for best paranormal romance. \"The Deep\" was a finalist for the Bram Stoker Award for Superior Achievement in a Novel and a finalist for the Locus Award for Best Horror Novel.</s>"
+        },
+        {
+          "title": "Alma Katsu",
+          "text": " as \"Booklist\" and \"The Washington Post\" and was recognized as one of the ten best debut novels of the year by the American Library Association. Described as a literary take on the Faustian bargain, \"The Taker Trilogy\" tells the story of a young woman who has been given eternal life but comes to see this condition as a punishment for evil acts she perpetrated in life and is now condemned to revisit until the end of time.</s><s>Personal life. She lives in the Washington, DC area with her husband, musician Bruce Katsu.</s><s>Bibliography.</s><s>Bibliography.:Taker trilogy. - \"The Taker\", Gallery Books, 2011 () - \"The Reckoning\", Gallery Books, 2012 () - \"The Descent\", Gallery Books, 2014 ()</s><s>Bibliography.:Standalone novels. - \"The Hunger\", Transworld, March 2018 () - \"The Deep\", Transworld, March 2020 () - \"Red Widow\", G.P. Putnam's Sons, March 2021 ()</s><s>Bibliography.:Short stories. - \"The Witch Sisters,\" 2013 (ASIN B008N1YHPM) - \"The Marriage Price\", 2012 (ASIN B00B0QITYC) - \"The Devil"
+        }
+      ],
+      "category": "C",
+      "quote": "Bibliography.:Standalone novels. - \"The Hunger\", Transworld, March 2018",
+      "explanation": "The Hunger occurs in a standalone-novels bibliography within the Alma Katsu article, but the list entry does not repeat Katsu's name. Interpreting the title as her novel requires list-heading and article context, making this a bibliographic-attribution FN.",
+      "prediction": "NS",
+      "error_type": "FN",
+      "human_review_accepted": false
+    },
+    {
+      "example_id": 79,
+      "fact": "The Deep is a novel by Katsu.",
+      "original_label": "S",
+      "gold": "S",
+      "score": 0.006294833961874247,
+      "passages": [
+        {
+          "title": "Alma Katsu",
+          "text": "<s>Alma Katsu Alma Katsu (born 1959) is an American writer of adult fiction. Her books have been translated into over a dozen languages, and has been published in the United Kingdom, Brazil, Spain and Italy. Katsu has also had a 29-year career in the US federal government working in a number of positions dealing with intelligence and foreign policy, with an emphasis on technology issues. She previously worked as a senior policy analyst for the RAND Corporation.</s><s>Biography. Katsu was born in Fairbanks, Alaska, the daughter of an American-born father and a Japanese-born mother. She spent the majority of her youth living near Concord, Massachusetts, to which she attributes her interest in the early American history featured in her novels. She attended Brandeis University (BA in literature and writing, 1981) where she studied with novelist John Irving and children's book author Margaret Rey, and the Johns Hopkins University (MA in Fiction, 2004). She is also an alumna of the Squaw Valley writers workshops.</s><s>Career. Katsu's writing has received praise for its quality and ability to create authentic and realistic settings. She published her first novel, \"The Taker,\" in 2011 through Gallery Books. It received praise from outlets such"
+        },
+        {
+          "title": "Alma Katsu",
+          "text": "'s Scribe\", Gallery Books, 2012 (ASIN B006VFZPNU) - \"Pipefitter's Union\", in anthology \"Enhanced Gravity\", Paycock Press ()</s><s>Awards. \"The Taker\" was named one of the ten best debut novels of 2011 by \"Booklist\" magazine, the publication of the American Library Association. The second novel, \"The Reckoning\", was nominated for several year-end awards including Goodreads Readers Choice Award for best paranormal fantasy and RT Book Reviews Reviewers Choice Award for best paranormal romance. \"The Deep\" was a finalist for the Bram Stoker Award for Superior Achievement in a Novel and a finalist for the Locus Award for Best Horror Novel.</s>"
+        },
+        {
+          "title": "Alma Katsu",
+          "text": " as \"Booklist\" and \"The Washington Post\" and was recognized as one of the ten best debut novels of the year by the American Library Association. Described as a literary take on the Faustian bargain, \"The Taker Trilogy\" tells the story of a young woman who has been given eternal life but comes to see this condition as a punishment for evil acts she perpetrated in life and is now condemned to revisit until the end of time.</s><s>Personal life. She lives in the Washington, DC area with her husband, musician Bruce Katsu.</s><s>Bibliography.</s><s>Bibliography.:Taker trilogy. - \"The Taker\", Gallery Books, 2011 () - \"The Reckoning\", Gallery Books, 2012 () - \"The Descent\", Gallery Books, 2014 ()</s><s>Bibliography.:Standalone novels. - \"The Hunger\", Transworld, March 2018 () - \"The Deep\", Transworld, March 2020 () - \"Red Widow\", G.P. Putnam's Sons, March 2021 ()</s><s>Bibliography.:Short stories. - \"The Witch Sisters,\" 2013 (ASIN B008N1YHPM) - \"The Marriage Price\", 2012 (ASIN B00B0QITYC) - \"The Devil"
+        }
+      ],
+      "category": "C",
+      "quote": "\"The Deep\", Transworld, March 2020",
+      "explanation": "The Deep appears under the article's standalone-novels heading, and a separate passage calls it a finalist for novel awards. The author-work relation is distributed across article context, a list and another sentence rather than stated with Katsu in one direct premise, which fits bibliographic attribution failure.",
+      "prediction": "NS",
+      "error_type": "FN",
+      "human_review_accepted": false
+    },
+    {
+      "example_id": 80,
+      "fact": "Red Widow is a novel by Katsu.",
+      "original_label": "S",
+      "gold": "S",
+      "score": 0.007194691803306341,
+      "passages": [
+        {
+          "title": "Alma Katsu",
+          "text": "<s>Alma Katsu Alma Katsu (born 1959) is an American writer of adult fiction. Her books have been translated into over a dozen languages, and has been published in the United Kingdom, Brazil, Spain and Italy. Katsu has also had a 29-year career in the US federal government working in a number of positions dealing with intelligence and foreign policy, with an emphasis on technology issues. She previously worked as a senior policy analyst for the RAND Corporation.</s><s>Biography. Katsu was born in Fairbanks, Alaska, the daughter of an American-born father and a Japanese-born mother. She spent the majority of her youth living near Concord, Massachusetts, to which she attributes her interest in the early American history featured in her novels. She attended Brandeis University (BA in literature and writing, 1981) where she studied with novelist John Irving and children's book author Margaret Rey, and the Johns Hopkins University (MA in Fiction, 2004). She is also an alumna of the Squaw Valley writers workshops.</s><s>Career. Katsu's writing has received praise for its quality and ability to create authentic and realistic settings. She published her first novel, \"The Taker,\" in 2011 through Gallery Books. It received praise from outlets such"
+        },
+        {
+          "title": "Alma Katsu",
+          "text": " as \"Booklist\" and \"The Washington Post\" and was recognized as one of the ten best debut novels of the year by the American Library Association. Described as a literary take on the Faustian bargain, \"The Taker Trilogy\" tells the story of a young woman who has been given eternal life but comes to see this condition as a punishment for evil acts she perpetrated in life and is now condemned to revisit until the end of time.</s><s>Personal life. She lives in the Washington, DC area with her husband, musician Bruce Katsu.</s><s>Bibliography.</s><s>Bibliography.:Taker trilogy. - \"The Taker\", Gallery Books, 2011 () - \"The Reckoning\", Gallery Books, 2012 () - \"The Descent\", Gallery Books, 2014 ()</s><s>Bibliography.:Standalone novels. - \"The Hunger\", Transworld, March 2018 () - \"The Deep\", Transworld, March 2020 () - \"Red Widow\", G.P. Putnam's Sons, March 2021 ()</s><s>Bibliography.:Short stories. - \"The Witch Sisters,\" 2013 (ASIN B008N1YHPM) - \"The Marriage Price\", 2012 (ASIN B00B0QITYC) - \"The Devil"
+        },
+        {
+          "title": "Alma Katsu",
+          "text": "'s Scribe\", Gallery Books, 2012 (ASIN B006VFZPNU) - \"Pipefitter's Union\", in anthology \"Enhanced Gravity\", Paycock Press ()</s><s>Awards. \"The Taker\" was named one of the ten best debut novels of 2011 by \"Booklist\" magazine, the publication of the American Library Association. The second novel, \"The Reckoning\", was nominated for several year-end awards including Goodreads Readers Choice Award for best paranormal fantasy and RT Book Reviews Reviewers Choice Award for best paranormal romance. \"The Deep\" was a finalist for the Bram Stoker Award for Superior Achievement in a Novel and a finalist for the Locus Award for Best Horror Novel.</s>"
+        }
+      ],
+      "category": "C",
+      "quote": "\"Red Widow\", G.P. Putnam's Sons, March 2021",
+      "explanation": "Red Widow is listed under standalone novels in the Alma Katsu bibliography. The entry supplies a title, publisher and date without repeating the author, so a sentence-level classifier must recover author attribution from the surrounding article context.",
+      "prediction": "NS",
+      "error_type": "FN",
+      "human_review_accepted": false
+    },
+    {
+      "example_id": 99,
+      "fact": "He served for many years as a pastor.",
+      "original_label": "S",
+      "gold": "S",
+      "score": 0.034975022077560425,
+      "passages": [
+        {
+          "title": "Malcolm Hedding",
+          "text": "<s>Malcolm Hedding Malcolm Hedding (born 1952) is a South African anti-apartheid activist, theologian, evangelical minister, and Executive Director of the International Christian Embassy in Jerusalem (ICEJ).</s><s>Biography. Hedding was born in 1952 into a British descent family that had settled in the Eastern Cape region. His father, Guy Usher Hedding, managed a gold mine. Hedding entered the ministry in the early 1970s as a member of the Assemblies of God of Southern Africa. As a young ordained minister with the South African Assemblies of God, Hedding confronted the apartheid system from the pulpit and was forced to flee his homeland. Between 1986 and 1989, Malcolm a pastor of the Jerusalem Christian Assembly. During this period, he also functioned as the Chaplain for the International Christian Embassy in Jerusalem. As a Christian Zionist, Malcolm served from 1991 - 2000 as Chairman of \"Christian Action for Israel,\" a biblical Zionist organization in South Africa. Malcolm Hedding has been involved with the work of the International Christian Embassy Jerusalem (ICEJ) since 1981 and has been executive director since 2000. On 27 May 2011, it was announced that he would be stepping down as executive director as of"
+        },
+        {
+          "title": "Malcolm Hedding",
+          "text": " 31 July 2011.</s><s>Views on Israel. Malcolm is currently a Christian Zionist leader based in Jerusalem who is challenging the branding of Israel with the \"apartheid\" label. Hedding believes the Israeli barrier fence has \"nothing to do with apartheid and everything to do with Israel's self-defense\". He said that Israel has proven its desire to reach an accommodation with the Palestinians while granting political rights to its own Arab citizens within a liberal democratic system, but that the Palestinians remain committed to Israel's destruction. By contrast, he says, it was a tiny minority in South Africa that held power and once democracy came, the Nationalist Party that had dominated the masses disappeared. According to Hedding, \"Evangelical support for Israel is founded not on a prophecy, but on a promise, [...] It is the promise God made to Abraham that the Jewish people would receive the land of Canaan for the sake of world redemption. The Jewish people became servants of the lord, to bring an understanding of revelation of God and his redemptive purpose to the world. Evangelicals defend their right to live in peace and security in land of Canaan, support that comes out of a sense of gratitude for what we've received.\" Hedding believes Israel proven its desire to reach"
+        },
+        {
+          "title": "Malcolm Hedding",
+          "text": " a settlement with the Palestinians, while granting political rights to its Arab citizens within a democratic system. Nevertheless, he says that the Palestinians remain committed to Israel's destruction.</s><s>Books. - The Basis of Christian Support for Israel, International Christian Embassy Jerusalem-USA, 2005, - The Great Covenants of the Bible, - Hear our cry, Struik Christian Books, 1993, - For Zion's sake, Contact Publications, 1986, - Understanding Revelation, Intend Publishing, 2013,</s><s>References.</s>"
+        }
+      ],
+      "category": "D",
+      "quote": "Between 1986 and 1989, Malcolm a pastor of the Jerusalem Christian Assembly.",
+      "explanation": "The retrieved text expresses the pastoral role in a grammatically incomplete sentence and gives dates, while the claim uses He and the vague duration many years. Resolving the subject and relating the date interval to that duration requires contextual interpretation; the gold S label is retained without claiming an exact causal diagnosis.",
+      "prediction": "NS",
+      "error_type": "FN",
+      "human_review_accepted": false
+    },
+    {
+      "example_id": 105,
+      "fact": "She has worked with a number of organizations.",
+      "original_label": "NS",
+      "gold": "NS",
+      "score": 0.6173456311225891,
+      "passages": [
+        {
+          "title": "Hibo Wardere",
+          "text": "<s>Hibo Wardere Hibo Wardere is a Somali-born campaigner against female genital mutilation (FGM), author, and public speaker. Born in Somalia, she moved to London, England when just a teenager in 1989, as a refugee fleeing the Somali Civil War. She currently resides in Walthamstow, London, where she worked as a mediator and a regular FGM educator for Waltham Forest Borough. Her testimonials and campaigning work have made her one of Britain's most prominent campaigners about FGM and she has appeared in numerous publications, including the \"Telegraph\", the BBC, and \"The Guardian\".</s><s>Early life. Hibo Wardere was born in Somalia. At the age of six, she was the victim of type 3 FGM, an event she has described as \"being engulfed in pain from head to toe\". Every day for the next ten years, she sought answers from her mother, but was always denied a response. When Wardere was 16, she finally struck a deal with a relative, who promised to tell her everything about what happened after her wedding night. She was horrified by the revelations, and soon fled to London after the civil war broke out in the 1980s.</s><s>Activism. When"
+        },
+        {
+          "title": "Hibo Wardere",
+          "text": " she arrived in London, Wardere sought treatment for her wounds, but received little support from the NHS. Doctors failed to ask what had happened to her, and only rarely mentioned FGM on her medical files, even when she gave birth to her children. Wardere eventually found the answers she was looking for at the library, where she read about female mutilation in a book. Years later, when she was studying to become a teaching assistant, she opened up about her story in a homework essay. The head of staff read her work and asked her to deliver a speech to 120 teachers, during which some realised that their students might have experienced the same trauma. After reading Wardere's essay, school governor Clare Coghill booked Wardere appointments with other schools in the area. Wardere has worked as a mediator and FGM educator since then, helping young students escape FGM. She also delivers awareness raising sessions to doctors and the Police to assist in their understanding of FGM. Her testimonies have appeared in numerous publications, including the BBC, the \"Guardian\" and the \"Telegraph\". Wardere has advised that as an FGM survivor, she is aware many other women who have undergone the practice feel too ashamed to speak out about their suffering. Wardere is"
+        },
+        {
+          "title": "Hibo Wardere",
+          "text": " quoted as saying “It is a sexual abuse. It brings shame and rips women and girls of their dignity. It should be stopped\". Wardere's main ambition for the future is to see Female Genital Mutilation eradicated in her lifetime. Her memoir, \"Cut\", was published in April 2016.</s><s>Personal life. Hibo Wardere lives with her husband Yusuf and their seven children.</s>"
+        }
+      ],
+      "category": "A",
+      "quote": "She also delivers awareness raising sessions to doctors and the Police",
+      "explanation": "The passage lists schools, doctors, police and mediator/educator activities, but the claim compresses this into worked with a number of organizations. The generalisation is plausible, yet the benchmark label is NS, so this FP is an activity-to-broader-role inference rather than an established false biography detail.",
+      "prediction": "S",
+      "error_type": "FP",
+      "human_review_accepted": false
+    },
+    {
+      "example_id": 109,
+      "fact": "Nisar Ahmad Kakru was Kashmiri.",
+      "original_label": "NS",
+      "gold": "NS",
+      "score": 0.9924501180648804,
+      "passages": [
+        {
+          "title": "Nisar Ahmad Kakru",
+          "text": "<s>Nisar Ahmad Kakru Nisar Ahmad Kakru (born 26 October 1949 Baramulla, Kashmir, India) was the Chief Justice of the High Court of Andhra Pradesh, India from 19 February 2010 to 26 October 2011.</s><s>Career. Kakru was enrolled as a pleader in August 1975, as a vakil in February 1979 and as an advocate in April 1982.</s><s>Practice. Initially from August 1975, he practised at Baramulla district and sessions courts and other courts. He was appointed public prosecutor in the district and sessions court of Baramulla in 1978 and resigned in 1981 due to the order issued by Government of Jammu and Kashmir, debarring the public prosecutors of the state from their private practice and continued his private practice at Baramulla until 1984. Later, he started practice at Jammu and Kashmir High Court in 1984 in civil, criminal, constitutional, service, labour, revenue and company matters. In February 1988 he was appointed a chief government advocate and additional advocate general at Jammu and Kashmir High Court by the Government of Jammu and Kashmir and resigned in 1990, as the state government ceased to be in power due to imposition of the governor’s rule in the state. He continued his"
+        },
+        {
+          "title": "Nisar Ahmad Kakru",
+          "text": " private practice until 1996, when he was again appointed an advocate general until he was promoted to the bench of the High Court of Jammu and Kashmir in November 1997. During his practice as an advocate general, occasionally Nisar Ahmad was appointed Acting Chief Justice of Jammu and Kashmir from (April 2007 – June 2007), (November 2007 – January 2008) and (October 2008 – January 2009). Finally on 16 February 2010 he was appointed Chief Justice of the High Court of Andhra Pradesh following a recommendation by the Supreme Court which was approved by the President of India. On 19 February 2010, governor of Andhra Pradesh, E. S. L. Narasimhan administered oath of office to Kakru at Raj Bhavan in the presence of Chief Minister K Rosaiah and Assembly Speaker N Kiran Kumar Reddy. He retired upon attaining superannuation as the Chief Justice of the Andhra Pradesh High Court, Hyderabad on 26 October 2011.</s><s>Judgments. During his stint as the Acting Chief Justice of Jammu and Kashmir High Court, reorganisation of services of High Court staff took place. As executive chairman of the Jammu and Kashmir Legal Services Authority, Justice Nisar Ahmed played a key role in conducting about 1800 Lok Adalats in which about"
+        },
+        {
+          "title": "Nisar Ahmad Kakru",
+          "text": " 70,000 cases have been settled. Nisar Ahmed's landmark judgment was during his tenure as a judge of the Jammu and Kashmir High Court including the judgment holding of migrants from Doda and Poonch districts who have to be treated on par with migrants of Kashmir province.</s>"
+        }
+      ],
+      "category": "A",
+      "quote": "born 26 October 1949 Baramulla, Kashmir, India",
+      "explanation": "The evidence gives Kakru's birthplace in Kashmir, whereas Kashmiri can denote a regional identity or ethnicity. Moving from birthplace to that identity is an attribute inference; the high cached probability does not resolve the intended interpretation or override the supplied NS label.",
+      "prediction": "S",
+      "error_type": "FP",
+      "human_review_accepted": false
+    },
+    {
+      "example_id": 121,
+      "fact": "Don Featherstone created the plastic pink flamingo lawn ornament.",
+      "original_label": "S",
+      "gold": "S",
+      "score": 0.027659690007567406,
+      "passages": [
+        {
+          "title": "Don Featherstone (artist)",
+          "text": "<s>Don Featherstone (artist) Donald Featherstone (January 25, 1936 – June 22, 2015) was an American artist most widely known for his 1957 creation of the plastic pink flamingo while working for Union Products. Featherstone resided in Fitchburg, Massachusetts, where he kept 57 plastic flamingos on his back lawn. Featherstone and his wife Nancy dressed alike for over 35 years.</s><s>Biography. Featherstone was born in Worcester, Massachusetts, in 1936 and grew up in nearby Berlin. After graduating from the Worcester Art Museum's art school, in 1957, he was offered a job designing three-dimensional animals for Union Products, Inc. Over his years at Union Products, Featherstone sculpted over 750 different items, the first two of which were a girl with a water can and a boy with a dog. When Featherstone was asked in 1957 to sculpt a duck, he purchased one, which he named Charlie, and later released the bird in Coggshall Park. Later that year, he was asked to carve a flamingo. The now iconic pink flamingo went on sale in 1958, when the color pink was popular. In 1996, Featherstone was awarded the 1996 Ig Nobel Art Prize for his creation of the pink flamingo, and he also"
+        },
+        {
+          "title": "Don Featherstone (artist)",
+          "text": " began his tenure as president of Union Products, which he held until he retired in 2000. On June 22, 2015, Featherstone died from Lewy body dementia at the age of 79. Visitors often leave pink flamingos of their own on the lawn around his grave.</s><s>Pink flamingo. Featherstone based his creation on photographs of flamingos from National Geographic, as he was not able to obtain real flamingos to use as models. As time went on, the plastic flamingo became more popular. They appeared across the country and even as parts of various art exhibits. In 1987, Donald Featherstone inscribed his signature in the original plastic mold. This was apparently to help distinguish between original and \"knock-off\" pink plastic flamingos. Featherstone's signature stayed on the bird until 2001, when it was removed. The signature was quickly replaced because of a small boycott of the unsigned birds. In November 2006, Union Products closed and production of the flamingo stopped. Shortly thereafter, a New York company purchased the molds for Featherstone's flamingos and subcontracted production to a Fitchburg company, Cado Products. In 2010, Cado Products purchased the copyrights and plastic molds for the pink flamingos and continues to manufacture them. They"
+        },
+        {
+          "title": "Don Featherstone (artist)",
+          "text": " are generally sold in sets of two—one holding its head erect, nearly high, the other bending over as if looking for food.</s>"
+        }
+      ],
+      "category": "D",
+      "quote": "was an American artist most widely known for his 1957 creation of the plastic pink flamingo",
+      "explanation": "The passage supports creation using Donald Featherstone, while the claim uses Don Featherstone and adds lawn ornament; lawn context occurs elsewhere. This requires a name-variant match and a relation paraphrase with contextual detail, despite the clearly relevant retrieved evidence.",
+      "prediction": "NS",
+      "error_type": "FN",
+      "human_review_accepted": false
+    },
+    {
+      "example_id": 122,
+      "fact": "He has worked as a researcher at various organizations.",
+      "original_label": "NS",
+      "gold": "NS",
+      "score": 0.7468191385269165,
+      "passages": [
+        {
+          "title": "Travis Oliphant",
+          "text": "<s>Travis Oliphant Travis Oliphant is an American data scientist and businessman. He is a co-founder of NumFOCUS, 501(c)(3) nonprofit charity in the United States, and sits on its advisory board. He is also a founder of technology startup Anaconda (\"previously Continuum Analytics\"). In addition, Travis is the primary creator of NumPy and founding contributor to the SciPy packages in the Python programming language.</s><s>Early life and education. Oliphant has a Ph.D. in Biomedical Engineering from the Mayo Clinic and B.S. and M.S. degrees in Mathematics and Electrical Engineering from Brigham Young University.</s><s>Career. Oliphant was an Assistant Professor of Electrical and Computer Engineering at Brigham Young University from 2001 to 2007. In addition, he directed the BYU Biomedical Imaging Lab, and performed research on scanning impedance imaging. Oliphant served as President of Enthought from 2007 until 2011. He founded Continuum Analytics in January 2012 (subsequently renamed to Anaconda Inc.). Continuum makes the Python distribution Anaconda. In July 2015 Continuum Analytics received 24 million dollars in Series A Funding. Continuum Analytics received a $100,000 award from DARPA for the"
+        },
+        {
+          "title": "Travis Oliphant",
+          "text": " feasibility of designing a high-level data-parallel language extension to Python on graphics processing units (GPUs). On January 1, 2018, Oliphant announced he was leaving Anaconda Inc. He subsequently co-founded Quansight later that same year. He is also a member of the advisory council of the non-profit scientific computing foundation NumFOCUS.</s><s>Books written. Oliphant is the author of the textbook \"Guide To NumPy\" and associated manuals.</s><s>Books written.:Articles. - - -</s>"
+        }
+      ],
+      "category": "A",
+      "quote": "he directed the BYU Biomedical Imaging Lab, and performed research on scanning impedance imaging.",
+      "explanation": "The evidence explicitly reports research at BYU and separately lists several career roles and organisations. The claim expands this into working as a researcher at various organizations, a stronger multi-organisation role claim than that single research statement establishes.",
+      "prediction": "S",
+      "error_type": "FP",
+      "human_review_accepted": false
+    },
+    {
+      "example_id": 124,
+      "fact": "Mayo Clinic is an organization.",
+      "original_label": "NS",
+      "gold": "NS",
+      "score": 0.7813724875450134,
+      "passages": [
+        {
+          "title": "Travis Oliphant",
+          "text": " feasibility of designing a high-level data-parallel language extension to Python on graphics processing units (GPUs). On January 1, 2018, Oliphant announced he was leaving Anaconda Inc. He subsequently co-founded Quansight later that same year. He is also a member of the advisory council of the non-profit scientific computing foundation NumFOCUS.</s><s>Books written. Oliphant is the author of the textbook \"Guide To NumPy\" and associated manuals.</s><s>Books written.:Articles. - - -</s>"
+        },
+        {
+          "title": "Travis Oliphant",
+          "text": "<s>Travis Oliphant Travis Oliphant is an American data scientist and businessman. He is a co-founder of NumFOCUS, 501(c)(3) nonprofit charity in the United States, and sits on its advisory board. He is also a founder of technology startup Anaconda (\"previously Continuum Analytics\"). In addition, Travis is the primary creator of NumPy and founding contributor to the SciPy packages in the Python programming language.</s><s>Early life and education. Oliphant has a Ph.D. in Biomedical Engineering from the Mayo Clinic and B.S. and M.S. degrees in Mathematics and Electrical Engineering from Brigham Young University.</s><s>Career. Oliphant was an Assistant Professor of Electrical and Computer Engineering at Brigham Young University from 2001 to 2007. In addition, he directed the BYU Biomedical Imaging Lab, and performed research on scanning impedance imaging. Oliphant served as President of Enthought from 2007 until 2011. He founded Continuum Analytics in January 2012 (subsequently renamed to Anaconda Inc.). Continuum makes the Python distribution Anaconda. In July 2015 Continuum Analytics received 24 million dollars in Series A Funding. Continuum Analytics received a $100,000 award from DARPA for the"
+        }
+      ],
+      "category": "A",
+      "quote": "Oliphant has a Ph.D. in Biomedical Engineering from the Mayo Clinic",
+      "explanation": "The passage mentions Mayo Clinic as a degree-granting institution without directly asserting the entity type organization. Inferring that type is reasonable in ordinary language, so this is a type-inference disagreement with the supplied NS annotation rather than evidence that the real-world claim is false.",
+      "prediction": "S",
+      "error_type": "FP",
+      "human_review_accepted": false
+    },
+    {
+      "example_id": 133,
+      "fact": "He served as a sniper.",
+      "original_label": "NS",
+      "gold": "NS",
+      "score": 0.997329592704773,
+      "passages": [
+        {
+          "title": "Rob Furlong",
+          "text": "<s>Rob Furlong Rob Furlong (born 11 November 1976) is a Canadian former military sniper who, from March 2002 until November 2009, held the world record for the longest confirmed sniper kill in combat, at. His record stood for over 7 years and was improved upon by Craig Harrison with a distance of using a L115A3 Long Range Rifle.</s><s>Early life. Born on Fogo Island, Newfoundland, on 11 November 1976. In his early life Furlong taught himself to fire a rifle ambidextrously.</s><s>Military career. Inspired by a VHS tape, Furlong decided to join the military in 1997. Furlong enlisted in the Canadian Army and served with the 3rd Battalion, Princess Patricia's Canadian Light Infantry. Furlong was stationed in Bosnia in 1999 as a peace keeper. In March 2002, Furlong participated in Operation Anaconda in Afghanistan's Shah-i-Kot Valley. His sniper team included Master Corporal Graham Ragsdale (Team Commander), Master Corporal Tim McMeekin, Master Corporal Arron Perry, and Corporal Dennis Eason. A group of three Al-Qaeda fighters was moving into a mountainside position when Furlong took aim with his long"
+        },
+        {
+          "title": "Rob Furlong",
+          "text": "-range sniper weapon (LRSW), a.50-calibre McMillan Brothers Tac-50 rifle, loaded with Hornady A-MAX 750 gr very-low-drag bullets. He began firing at a fighter carrying an RPK machine gun. Furlong's first shot missed and his second shot hit the knapsack on the target's back. The third struck the target's torso, killing him. The distance was measured as. With a muzzle speed of, each shot reached the target almost three seconds after Furlong fired. This became the longest sniper kill in history at the time, surpassing the previous record set by his teammate, Master Corporal Arron Perry, by. This feat is not typical for the effective range with a high first-hit probability of the employed rifle on non-static targets (see maximum effective range). The shot was aided by the ambient air density in the Shah-i-Kot Valley where Furlong operated, which is significantly lower than at sea level due to its mean elevation. In December 2003, PPCLI snipers Master Corporal Graham Ragsdale, Master Corporal Tim McMeekin, Corporal Dennis Eason, Corporal Rob Furlong and Master Corporal Ar"
+        },
+        {
+          "title": "Rob Furlong",
+          "text": "ron Perry were awarded the Bronze Star Medal by the United States Army for their actions in combat during Operation Anaconda from 2–11 March 2002. Furlong held the record of longest kill shot recorded in history until November 2009, when his record of was beaten by Corporal of Horse Craig Harrison, of the Blues and Royals, part of the Household Cavalry of the British Army, who set a new record by shooting two Taliban fighters at, using a.338 Lapua L115A3 Long Range Rifle.</s><s>Later career. After leaving the Canadian Army, Furlong moved to Edmonton, Alberta and joined the Edmonton Police Service in 2004, although he had considered joining Joint Task Force 2. In 2012, Furlong was dismissed from the police for discreditable conduct, after an episode in which he physically abused and urinated on a fellow police officer., he operates a marksmanship academy, called Rob Furlong's Marksmanship Academy, based in Alberta.</s><s>See also. - Longest recorded sniper kills</s><s>See also. - List of books, articles and documentaries about snipers</s><s>Further reading. - McMillan Tac-50 article including a photo of the actual rifle Furlong used. - Mention in Dispatch (broken"
+        },
+        {
+          "title": "Rob Furlong",
+          "text": " link as of 03/03/2012) - 'We were abandoned': Story of the Princess Patricia's Canadian Light Infantry Snipers</s>"
+        }
+      ],
+      "category": "B",
+      "quote": "is a Canadian former military sniper",
+      "explanation": "The source explicitly identifies Rob Furlong as a former military sniper, which supports the claim if He refers to Furlong. Because the stored gold label is NS, this FP exposes a possible annotation or subject-context mismatch; it must not be explained as absence of sniper evidence.",
+      "prediction": "S",
+      "error_type": "FP",
+      "human_review_accepted": false
+    },
+    {
+      "example_id": 141,
+      "fact": "She was born on July 18, 1987.",
+      "original_label": "S",
+      "gold": "S",
+      "score": 0.00027386617148295045,
+      "passages": [
+        {
+          "title": "Jessica Barboza",
+          "text": "<s>Jessica Barboza Jessica Cristina Barboza Schmidt (born in Maracaibo, Venezuela on 14 August 1987) is a Venezuelan model and beauty pageant titleholder who won the titles of Miss Earth Venezuela 2009 and Miss International Venezuela 2010.</s><s>Sambil Model / Miss Earth Venezuela. Barboza won in 2009 the Sambil Model / Miss Earth Venezuela title in a pageant held in Margarita Island, Venezuela on June 12, 2009. She was crowned by the outgoing titleholder, María Daniela Torrealba, Sambil Model / Miss Earth Venezuela 2008. She also competed in Miss Earth Venezuela 2006 but didn't place.</s><s>Miss Earth. As the official representative of her country to the 2009 Miss Earth pageant held in Boracay, Philippines, on November 22, 2009, Barboza competed against 79 other delegates and was designated 2nd runner-up.</s><s>Miss Venezuela. Barboza competed in 2010 as Miss Distrito Capital in her country's national beauty pageant, Miss Venezuela, obtaining the title of \"Miss International Venezuela\" on October 28, 2010.</s><s>Miss International. She represented Venezuela in the 2011 Miss International pageant in Chengdu, China in November 6, 2011. During the Miss International 2011 final, Jessica Bar"
+        },
+        {
+          "title": "Jessica Barboza",
+          "text": "boza was announced as the 1st Runner-Up.</s><s>Personal life. She currently resides in Panama with her husband Federico Pauls, with whom she has three children: Benjamín and twins Olivia and Chloé.</s>"
+        }
+      ],
+      "category": "B",
+      "quote": "born in Maracaibo, Venezuela on 14 August 1987",
+      "explanation": "The gold-supported claim gives 18 July 1987, but the supplied Jessica Barboza passage gives 14 August 1987. The low entailment score is compatible with rejecting that conflicting date, although it is still an FN under the fixed evaluation labels; the original labels are not changed.",
+      "prediction": "NS",
+      "error_type": "FN",
+      "human_review_accepted": false
+    },
+    {
+      "example_id": 168,
+      "fact": "Kerser is a songwriter.",
+      "original_label": "NS",
+      "gold": "NS",
+      "score": 0.9455630779266357,
+      "passages": [
+        {
+          "title": "Kerser",
+          "text": "Kerser is raw, aggressive and territorial,\" while the album is \"A fervent mix of rave, rap, electro and r'n'b.\" He gained fame from the track \"Kerser is the sickest\" that was also on the first album. His second album \"No Rest for the Sickest\" was released on 2 November 2012. It reached No. 15 on the ARIA Albums Chart, and No. 1 on the ARIA Urban Albums Chart. He toured nationally to support the album. He was signed to management with Obese Records in 2013, and in late 2015 moved to an independent manager. In March 2013 he released the single \"We Here Now\" with Rates, which led to a national tour. Among his performances are the Breath of Life Festival in Tasmania alongside 360, Illy, Seth Sentry. In August 2013 Kerser released \"The No Rest for the Sickest National Tour\" on DVD. It debuted at No. 1 on the ARIA Music DVD Chart. His third album \"S.C.O.T.\" was released on 25 October 2013. The album features Nebs, Jay (Uf), and Jace Excel. It debuted at No. 1 on the ARIA Urban Albums Chart and No"
+        },
+        {
+          "title": "Kerser",
+          "text": "<s>Kerser Scott Froml (born 21 August 1987), better known by his stage name Kerser, is an Australian rapper. He has released two mixtapes and several albums since 2009 and his second album \"No Rest for the Sickest\" reached No. 15 on the ARIA albums chart, while the album's tour DVD debuted at No. 1 on the ARIA Music DVD chart in 2013. His album \"S.C.O.T.\" reached No. 5 while his fourth album \"King\" was released on 13 November 2014 and reached number 9.</s><s>Biography. Scott Froml was born on 21 August 1987, in the vicinity of Campbelltown, New South Wales. He started his rap career at an early age while living in Campbelltown, rapping with his older brother Aaron (aka Rates) at age 11 and recording by 18. One of his major influences is Tupac. Kerser released his first mixtape \"Straight Out Tha Gutter\" in 2009 with his second mixtape \"Down the Drain\" being released in 2010. His first album \"The Nebulizer\" was released on 14 October 2011. The album was produced by Nebs, hence the name. According to an article in \"INpress\", \""
+        },
+        {
+          "title": "Kerser",
+          "text": ". 1 on the iTunes Chart, knocking off Linkin Park, David Dallas and Katy Perry in the charts. He toured Australia in February and March 2013 to support the album. Kerser's fourth album \"King\", produced by Nebs, was released on 14 November 2014. His fifth album titled \"Next Step\" was released on 13 November 2015 and produced by Sinima Beats. It was Kerser's first album to be released under his label ABK Records and was distributed by Warner Music Australia.</s><s>Battle rap career. Kerser is a well-known battle rapper in Australia, appearing on circuits such as Got Beef, Grind Time Now Australia and Real Talk Battle League. Between 2010 and 2012, he only lost two battles (to Zone Doubt and Jay Legend respectively), excluding a well-publicised battle against 360 in December 2011, where no official winner was announced, however the decision to make the battle unjudged had come in at the last minute. His long-running rivalry with 360 heated up again in August 2013 when 360 released a diss track called \"30 Minutes Tops\", Kerser returns with a diss track called \"Old Matt\". The rivalry and battle is widely known as the most viewed battle rap in the history of Australian hip hop, making it the"
+        },
+        {
+          "title": "Kerser",
+          "text": " benchmark for all major battles that have proceeded it. At the time of the battle, it elevated both rapper's careers greatly really showcasing the difference in culture between Sydney and Melbourne hip hop street culture. In the years that have followed both Kerser and 360 have shown mutual professional respect for each other.</s><s>See also. - Australian hip hop - Obese Records</s>"
+        }
+      ],
+      "category": "A",
+      "quote": "is an Australian rapper.",
+      "explanation": "The source describes Kerser as a rapper and discusses recordings, albums and diss tracks, while the claim assigns the distinct role songwriter. The cached S decision fits a related-role inference, but the passages do not directly establish songwriting and the supplied label is NS.",
+      "prediction": "S",
+      "error_type": "FP",
+      "human_review_accepted": false
+    }
+  ]
+}

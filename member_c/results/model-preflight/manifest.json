@@ -1,0 +1,30 @@
+{
+  "status": "failed",
+  "requested_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+  "device": "cpu",
+  "threads": 4,
+  "threshold": 0.38,
+  "pruning_threshold": 0.05,
+  "order": "pruned-first",
+  "variants_completed": [],
+  "full_dataset_run": false,
+  "limitations": "Single ordered timings include tokenization, Python checks and gc.collect; no warm-up is excluded. Repeat in reverse order before attributing small timing differences to pruning. Discrete decisions use the same retained evidence as each probability variant.",
+  "file_sha256": {
+    "factcheck.py": "35d48b3e6a841320f3f26ff05538ed15909ccbbdd87a6a0b19612cf21294a37a",
+    "factchecking_main.py": "5c40a1ec1a41cbdb8a9655377fe46cefcf2feceba57026a12d2a340eec5783b8",
+    "data/dev_labeled_ChatGPT.jsonl": "e3fc8f4d1e6377009782d3581bce4817a37b5725adfc3eaaa1ad760829eac172",
+    "data/passages_bm25_ChatGPT_humfacts.jsonl": "cade871bbc4531a651588fbbe2232a03bf305e2e1c4f7cf33a48b41db961c264",
+    "member_c/evaluate_pruning.py": "36d13bb62363533bd2cb3e9c458cfae3b7d36672a5620c077b769ce9610a3e2d"
+  },
+  "package_versions": {
+    "torch": "2.5.0",
+    "transformers": "4.45.2",
+    "nltk": "3.9.1",
+    "numpy": "2.0.2"
+  },
+  "full_dataset_count": 221,
+  "evaluated_count": 221,
+  "full_dataset_requested": true,
+  "error_type": "OSError",
+  "error": "We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli is not the path to a directory containing a file named config.json.\nCheckout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'."
+}

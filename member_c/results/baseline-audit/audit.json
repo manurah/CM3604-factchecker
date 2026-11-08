@@ -1,0 +1,127 @@
+{
+  "evidence_kind": "Existing-code audit; cached score arithmetic is not fresh model inference.",
+  "git_head": "364fe41401bdf594473e368af9d0d3e5277739ce",
+  "data": {
+    "biographies": 31,
+    "retrieved_rows": 5427,
+    "unique_retrieved_facts": 5373,
+    "loaded_examples": 221,
+    "labels": {
+      "NS": 93,
+      "S": 112,
+      "IR": 16
+    },
+    "driver_binary_labels": {
+      "NS": 109,
+      "S": 112
+    },
+    "loader_messages": "",
+    "passages_per_example": {
+      "2": 66,
+      "3": 98,
+      "5": 38,
+      "4": 19
+    }
+  },
+  "segmentation": {
+    "evaluated_passages": 692,
+    "passages_containing_s_markup": 616,
+    "current_sentence_count": 5570,
+    "sentences_containing_s_markup": 1187,
+    "model_inputs_containing_s_markup_after_pruning": 398,
+    "first_retained_model_input": "<s>Marianne McAndrew Marianne Christine McAndrew is an actress known for her role as Irene Molloy in the film \"Hello, Dolly!\"</s><s>Career."
+  },
+  "pruning_structure_only": {
+    "total_sentences": 5570,
+    "pruned_sentences": 3951,
+    "retained_model_calls": 1619,
+    "fraction_pruned": 0.7093357271095153,
+    "real_model_used": false,
+    "accuracy_or_model_runtime_comparison_available": false
+  },
+  "cache": {
+    "signature": {
+      "model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+      "device": "cpu",
+      "pruning_threshold": 0.05,
+      "factcheck_sha256": "24c5b1d60c62dd1bcbd89745bd7bf008236a4f788e7ea0f205767ec08d217096",
+      "driver_sha256": "8cd57bf9f8c48b81f0a2acd197b62d1a597dcfb0251664d039ed3091b280fbbe",
+      "labels_sha256": "12939cb6954e4080537d0d2c437b2823d087d70e78d9d51b9b8e92d7ae7e3106",
+      "passages_sha256": "795d618f8c6c5402d6188e5a3aa60c8491f82f665911d94d3d4cb59accc1c612"
+    },
+    "fingerprints": {
+      "factcheck.py": {
+        "current_sha256": "35d48b3e6a841320f3f26ff05538ed15909ccbbdd87a6a0b19612cf21294a37a",
+        "saved_sha256": "24c5b1d60c62dd1bcbd89745bd7bf008236a4f788e7ea0f205767ec08d217096",
+        "matching_variants": [
+          "windows_CRLF_with_entailment_default_0.5"
+        ]
+      },
+      "factchecking_main.py": {
+        "current_sha256": "5c40a1ec1a41cbdb8a9655377fe46cefcf2feceba57026a12d2a340eec5783b8",
+        "saved_sha256": "8cd57bf9f8c48b81f0a2acd197b62d1a597dcfb0251664d039ed3091b280fbbe",
+        "matching_variants": [
+          "windows_CRLF"
+        ]
+      },
+      "data/dev_labeled_ChatGPT.jsonl": {
+        "current_sha256": "e3fc8f4d1e6377009782d3581bce4817a37b5725adfc3eaaa1ad760829eac172",
+        "saved_sha256": "12939cb6954e4080537d0d2c437b2823d087d70e78d9d51b9b8e92d7ae7e3106",
+        "matching_variants": [
+          "windows_CRLF"
+        ]
+      },
+      "data/passages_bm25_ChatGPT_humfacts.jsonl": {
+        "current_sha256": "cade871bbc4531a651588fbbe2232a03bf305e2e1c4f7cf33a48b41db961c264",
+        "saved_sha256": "795d618f8c6c5402d6188e5a3aa60c8491f82f665911d94d3d4cb59accc1c612",
+        "matching_variants": [
+          "windows_CRLF"
+        ]
+      }
+    },
+    "records": 221,
+    "records_match_current_ordered_data": true,
+    "scores_finite_and_in_range": true,
+    "csv_rows_checked": 100,
+    "all_csv_rows_match_scores": true,
+    "metrics_from_saved_scores_only": {
+      "0.38": {
+        "TN": 99,
+        "TP": 88,
+        "FP": 10,
+        "FN": 24,
+        "correct": 187,
+        "total": 221,
+        "accuracy": 0.8461538461538461
+      },
+      "0.5": {
+        "TN": 100,
+        "TP": 83,
+        "FP": 9,
+        "FN": 29,
+        "correct": 183,
+        "total": 221,
+        "accuracy": 0.8280542986425339
+      }
+    },
+    "reported_old_run_metadata_not_reverified": {
+      "evaluation_seconds": 301.82206679999945,
+      "total_sentences": 5570,
+      "pruned_sentences": 3951,
+      "model_calls": 1619
+    }
+  },
+  "behaviour_checks": {
+    "executed": 20,
+    "passed": 19,
+    "failed": 1,
+    "errors": 0,
+    "skipped": 0,
+    "failures": [
+      {
+        "test": "__main__.ExistingBehaviour.test_sentence_boundaries_and_cleaning_with_dataset_markup",
+        "traceback": "Traceback (most recent call last):\n  File \"/workspace/CM3604-factchecker/member_c/check_existing.py\", line 141, in test_sentence_boundaries_and_cleaning_with_dataset_markup\n    self.assertEqual([p for p, _ in model.calls], ['Ada wrote notes.', 'She lived in London.'])\nAssertionError: Lists differ: ['<s>Ada wrote notes.</s><s>She lived in London.</s>'] != ['Ada wrote notes.', 'She lived in London.']\n\nFirst differing element 0:\n'<s>Ada wrote notes.</s><s>She lived in London.</s>'\n'Ada wrote notes.'\n\nSecond list contains 1 additional elements.\nFirst extra element 1:\n'She lived in London.'\n\n- ['<s>Ada wrote notes.</s><s>She lived in London.</s>']\n?   ---                ^^^^^^^                    ----\n\n+ ['Ada wrote notes.', 'She lived in London.']\n?                   ^^^^\n\n"
+      }
+    ]
+  }
+}
