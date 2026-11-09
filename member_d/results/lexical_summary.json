@@ -1,0 +1,366 @@
+{
+  "status": "completed",
+  "mode": "word_overlap",
+  "full_dataset_run": true,
+  "completed_runs": [
+    "recall_nltk1_stop1_stem1",
+    "jaccard_nltk1_stop1_stem1",
+    "f1_nltk1_stop1_stem1",
+    "rouge_nltk1_stop1_stem1",
+    "recall_nltk0_stop0_stem0",
+    "recall_nltk0_stop0_stem1",
+    "recall_nltk0_stop1_stem0",
+    "recall_nltk0_stop1_stem1",
+    "recall_nltk1_stop0_stem0",
+    "recall_nltk1_stop0_stem1",
+    "recall_nltk1_stop1_stem0"
+  ],
+  "threshold": 0.65,
+  "git_head": "e4e116c8259b14ff3d094c6944b2126afb705828",
+  "source_sha256": {
+    "factcheck.py": "35d48b3e6a841320f3f26ff05538ed15909ccbbdd87a6a0b19612cf21294a37a",
+    "factchecking_main.py": "5c40a1ec1a41cbdb8a9655377fe46cefcf2feceba57026a12d2a340eec5783b8",
+    "member_c/evidence_processing.py": "e544dbd1c33c4fc6228415c091658ff004f06f05397aecaca688c330c3a6b41a",
+    "member_d/evaluation.py": "f11475cdaa93e873bb80fe175498de3cfdf591b8ddc76bfb0f2e25849afcf1dd",
+    "member_d/bounded_entailment.py": "1464e058befbbceb1f69a70db0a1c02b18ff03cb33f62e898619705a2740c390",
+    "member_d/run_code.py": "b3c385bd7e364d81b4439be27049ce0df797d0ad06015f56338c7492ce95fa2d",
+    "data/dev_labeled_ChatGPT.jsonl": "e3fc8f4d1e6377009782d3581bce4817a37b5725adfc3eaaa1ad760829eac172",
+    "data/passages_bm25_ChatGPT_humfacts.jsonl": "cade871bbc4531a651588fbbe2232a03bf305e2e1c4f7cf33a48b41db961c264"
+  },
+  "python_version": "3.10.22",
+  "package_versions": {
+    "torch": "2.5.0",
+    "transformers": "4.45.2",
+    "nltk": "3.9.1",
+    "numpy": "2.0.2"
+  },
+  "device": "cpu",
+  "threads": 4,
+  "requested_model": null,
+  "batch_size": null,
+  "limitations": "Development-set tuning is not independent test-set evaluation. Neural scoring timings include preprocessing, record assembly and progress logging but exclude checkpoint loading, threshold sweeps and file writes; reverse variant order before attributing small timing differences to pruning. Minibatch forwards and sentence-pair counts differ.",
+  "full_dataset_count": 221,
+  "evaluated_count": 221,
+  "full_dataset_requested": true,
+  "lexical_summary": [
+    {
+      "configuration": "recall_nltk1_stop1_stem1",
+      "scorer": "recall",
+      "use_nltk": true,
+      "remove_stopwords": true,
+      "use_stemming": true,
+      "threshold": 0.65,
+      "scoring_seconds": 0.22584481600006256,
+      "sweep_seconds": 0.005890323000130593,
+      "best_threshold": {
+        "threshold": 0.65,
+        "true_positives": 92,
+        "true_negatives": 87,
+        "false_positives": 22,
+        "false_negatives": 20,
+        "total": 221,
+        "correct": 179,
+        "accuracy": 0.8099547511312217
+      },
+      "fixed_threshold_metrics": {
+        "true_positives": 92,
+        "true_negatives": 87,
+        "false_positives": 22,
+        "false_negatives": 20,
+        "total": 221,
+        "correct": 179,
+        "accuracy": 0.8099547511312217
+      }
+    },
+    {
+      "configuration": "jaccard_nltk1_stop1_stem1",
+      "scorer": "jaccard",
+      "use_nltk": true,
+      "remove_stopwords": true,
+      "use_stemming": true,
+      "threshold": 0.65,
+      "scoring_seconds": 0.21962980600005721,
+      "sweep_seconds": 0.009130602000141153,
+      "best_threshold": {
+        "threshold": 0.02,
+        "true_positives": 109,
+        "true_negatives": 42,
+        "false_positives": 67,
+        "false_negatives": 3,
+        "total": 221,
+        "correct": 151,
+        "accuracy": 0.6832579185520362
+      },
+      "fixed_threshold_metrics": {
+        "true_positives": 0,
+        "true_negatives": 109,
+        "false_positives": 0,
+        "false_negatives": 112,
+        "total": 221,
+        "correct": 109,
+        "accuracy": 0.49321266968325794
+      }
+    },
+    {
+      "configuration": "f1_nltk1_stop1_stem1",
+      "scorer": "f1",
+      "use_nltk": true,
+      "remove_stopwords": true,
+      "use_stemming": true,
+      "threshold": 0.65,
+      "scoring_seconds": 0.20613398799991955,
+      "sweep_seconds": 0.005511093999984951,
+      "best_threshold": {
+        "threshold": 0.05,
+        "true_positives": 93,
+        "true_negatives": 62,
+        "false_positives": 47,
+        "false_negatives": 19,
+        "total": 221,
+        "correct": 155,
+        "accuracy": 0.7013574660633484
+      },
+      "fixed_threshold_metrics": {
+        "true_positives": 1,
+        "true_negatives": 109,
+        "false_positives": 0,
+        "false_negatives": 111,
+        "total": 221,
+        "correct": 110,
+        "accuracy": 0.497737556561086
+      }
+    },
+    {
+      "configuration": "rouge_nltk1_stop1_stem1",
+      "scorer": "rouge",
+      "use_nltk": true,
+      "remove_stopwords": true,
+      "use_stemming": true,
+      "threshold": 0.65,
+      "scoring_seconds": 1.2002941599998849,
+      "sweep_seconds": 0.006113837999919269,
+      "best_threshold": {
+        "threshold": 0.04,
+        "true_positives": 104,
+        "true_negatives": 27,
+        "false_positives": 82,
+        "false_negatives": 8,
+        "total": 221,
+        "correct": 131,
+        "accuracy": 0.5927601809954751
+      },
+      "fixed_threshold_metrics": {
+        "true_positives": 0,
+        "true_negatives": 109,
+        "false_positives": 0,
+        "false_negatives": 112,
+        "total": 221,
+        "correct": 109,
+        "accuracy": 0.49321266968325794
+      }
+    },
+    {
+      "configuration": "recall_nltk0_stop0_stem0",
+      "scorer": "recall",
+      "use_nltk": false,
+      "remove_stopwords": false,
+      "use_stemming": false,
+      "threshold": 0.65,
+      "scoring_seconds": 0.003728691000105755,
+      "sweep_seconds": 0.005542221000041536,
+      "best_threshold": {
+        "threshold": 0.6,
+        "true_positives": 78,
+        "true_negatives": 65,
+        "false_positives": 44,
+        "false_negatives": 34,
+        "total": 221,
+        "correct": 143,
+        "accuracy": 0.6470588235294118
+      },
+      "fixed_threshold_metrics": {
+        "true_positives": 59,
+        "true_negatives": 78,
+        "false_positives": 31,
+        "false_negatives": 53,
+        "total": 221,
+        "correct": 137,
+        "accuracy": 0.6199095022624435
+      }
+    },
+    {
+      "configuration": "recall_nltk0_stop0_stem1",
+      "scorer": "recall",
+      "use_nltk": false,
+      "remove_stopwords": false,
+      "use_stemming": true,
+      "threshold": 0.65,
+      "scoring_seconds": 0.14981410399991546,
+      "sweep_seconds": 0.005746737999970719,
+      "best_threshold": {
+        "threshold": 0.6,
+        "true_positives": 80,
+        "true_negatives": 61,
+        "false_positives": 48,
+        "false_negatives": 32,
+        "total": 221,
+        "correct": 141,
+        "accuracy": 0.6380090497737556
+      },
+      "fixed_threshold_metrics": {
+        "true_positives": 63,
+        "true_negatives": 77,
+        "false_positives": 32,
+        "false_negatives": 49,
+        "total": 221,
+        "correct": 140,
+        "accuracy": 0.6334841628959276
+      }
+    },
+    {
+      "configuration": "recall_nltk0_stop1_stem0",
+      "scorer": "recall",
+      "use_nltk": false,
+      "remove_stopwords": true,
+      "use_stemming": false,
+      "threshold": 0.65,
+      "scoring_seconds": 0.004115870999839899,
+      "sweep_seconds": 0.005752877000077206,
+      "best_threshold": {
+        "threshold": 0.76,
+        "true_positives": 55,
+        "true_negatives": 91,
+        "false_positives": 18,
+        "false_negatives": 57,
+        "total": 221,
+        "correct": 146,
+        "accuracy": 0.6606334841628959
+      },
+      "fixed_threshold_metrics": {
+        "true_positives": 64,
+        "true_negatives": 77,
+        "false_positives": 32,
+        "false_negatives": 48,
+        "total": 221,
+        "correct": 141,
+        "accuracy": 0.6380090497737556
+      }
+    },
+    {
+      "configuration": "recall_nltk0_stop1_stem1",
+      "scorer": "recall",
+      "use_nltk": false,
+      "remove_stopwords": true,
+      "use_stemming": true,
+      "threshold": 0.65,
+      "scoring_seconds": 0.08473862000005283,
+      "sweep_seconds": 0.006240818000151194,
+      "best_threshold": {
+        "threshold": 0.76,
+        "true_positives": 58,
+        "true_negatives": 91,
+        "false_positives": 18,
+        "false_negatives": 54,
+        "total": 221,
+        "correct": 149,
+        "accuracy": 0.6742081447963801
+      },
+      "fixed_threshold_metrics": {
+        "true_positives": 68,
+        "true_negatives": 76,
+        "false_positives": 33,
+        "false_negatives": 44,
+        "total": 221,
+        "correct": 144,
+        "accuracy": 0.6515837104072398
+      }
+    },
+    {
+      "configuration": "recall_nltk1_stop0_stem0",
+      "scorer": "recall",
+      "use_nltk": true,
+      "remove_stopwords": false,
+      "use_stemming": false,
+      "threshold": 0.65,
+      "scoring_seconds": 0.1086965050001254,
+      "sweep_seconds": 0.005005716000141547,
+      "best_threshold": {
+        "threshold": 0.71,
+        "true_positives": 93,
+        "true_negatives": 74,
+        "false_positives": 35,
+        "false_negatives": 19,
+        "total": 221,
+        "correct": 167,
+        "accuracy": 0.755656108597285
+      },
+      "fixed_threshold_metrics": {
+        "true_positives": 96,
+        "true_negatives": 52,
+        "false_positives": 57,
+        "false_negatives": 16,
+        "total": 221,
+        "correct": 148,
+        "accuracy": 0.669683257918552
+      }
+    },
+    {
+      "configuration": "recall_nltk1_stop0_stem1",
+      "scorer": "recall",
+      "use_nltk": true,
+      "remove_stopwords": false,
+      "use_stemming": true,
+      "threshold": 0.65,
+      "scoring_seconds": 0.23617282300006082,
+      "sweep_seconds": 0.005808550999972795,
+      "best_threshold": {
+        "threshold": 0.82,
+        "true_positives": 77,
+        "true_negatives": 95,
+        "false_positives": 14,
+        "false_negatives": 35,
+        "total": 221,
+        "correct": 172,
+        "accuracy": 0.7782805429864253
+      },
+      "fixed_threshold_metrics": {
+        "true_positives": 101,
+        "true_negatives": 48,
+        "false_positives": 61,
+        "false_negatives": 11,
+        "total": 221,
+        "correct": 149,
+        "accuracy": 0.6742081447963801
+      }
+    },
+    {
+      "configuration": "recall_nltk1_stop1_stem0",
+      "scorer": "recall",
+      "use_nltk": true,
+      "remove_stopwords": true,
+      "use_stemming": false,
+      "threshold": 0.65,
+      "scoring_seconds": 0.08883013500008019,
+      "sweep_seconds": 0.0051381850000780105,
+      "best_threshold": {
+        "threshold": 0.65,
+        "true_positives": 86,
+        "true_negatives": 88,
+        "false_positives": 21,
+        "false_negatives": 26,
+        "total": 221,
+        "correct": 174,
+        "accuracy": 0.7873303167420814
+      },
+      "fixed_threshold_metrics": {
+        "true_positives": 86,
+        "true_negatives": 88,
+        "false_positives": 21,
+        "false_negatives": 26,
+        "total": 221,
+        "correct": 174,
+        "accuracy": 0.7873303167420814
+      }
+    }
+  ]
+}

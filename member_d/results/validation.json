@@ -1,0 +1,48 @@
+{
+  "coding_scope": [
+    "threshold evaluation tooling",
+    "bounded neural processing",
+    "maximum evidence-score aggregation",
+    "binary metrics and stable error selection"
+  ],
+  "regression_tests": {
+    "run": 25,
+    "passed": 25,
+    "failed": 0,
+    "skipped": 0,
+    "backend": "synthetic PyTorch backend; not DeBERTa"
+  },
+  "lexical_experiments": {
+    "status": "completed",
+    "full_dataset_examples": 221,
+    "configurations": 11,
+    "cutoffs_per_configuration": 101,
+    "independent_predictions_checked": 2431,
+    "reference_classifier": "unchanged Member C lexical adapter reusing original scorers",
+    "default_recall_correct": 179,
+    "default_recall_accuracy": 0.8099547511312217,
+    "best_recall_threshold": 0.65
+  },
+  "supplied_word_overlap_command": {
+    "exit_code": 0,
+    "correct": 179,
+    "total": 221
+  },
+  "neural_validation": {
+    "status": "blocked",
+    "completed_real_model_runs": 0,
+    "cause": "huggingface.co proxy 403; checkpoint absent from local cache",
+    "batch_bound_tested": 4,
+    "token_bound_tested": 512,
+    "real_model_accuracy": null,
+    "real_model_runtime": null
+  },
+  "source_preservation": {
+    "baseline_commit": "e4e116c8259b14ff3d094c6944b2126afb705828",
+    "existing_files_verified_unchanged": 41,
+    "modified_existing_files": []
+  },
+  "integration": "Opt-in member_d runner. Supplied factchecking_main.py and existing classifier definitions remain unchanged.",
+  "test_suite_sha256": "c00c70b4d5f3814239ff671542e95a12e6b11519d37f356c117fc69b017834dd",
+  "human_peer_review": "not claimed"
+}
