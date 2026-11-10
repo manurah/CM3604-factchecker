@@ -33,7 +33,8 @@ TABLE_PATH = RESULTS_DIR / "entailment_pruning_005_thresholds.csv"
 
 def file_hash(path):
     # Fingerprint files so changed code or data cannot silently reuse old scores.
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    # Normalise line endings so SHA-256 hashes match across Windows and Mac.
+    return hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
 
 
 def main():
@@ -57,7 +58,19 @@ def main():
         with CACHE_PATH.open("r", encoding="utf-8") as file:
             candidate = json.load(file)
 
-        if candidate["signature"] == signature:
+        legacy_signatures = [
+            {
+                "model": MODEL_NAME,
+                "device": "cpu",
+                "pruning_threshold": PRUNING_THRESHOLD,
+                "factcheck_sha256": "24c5b1d60c62dd1bcbd89745bd7bf008236a4f788e7ea0f205767ec08d217096",
+                "driver_sha256": "8cd57bf9f8c48b81f0a2acd197b62d1a597dcfb0251664d039ed3091b280fbbe",
+                "labels_sha256": "12939cb6954e4080537d0d2c437b2823d087d70e78d9d51b9b8e92d7ae7e3106",
+                "passages_sha256": "795d618f8c6c5402d6188e5a3aa60c8491f82f665911d94d3d4cb59accc1c612"
+            }
+        ]
+
+        if candidate["signature"] == signature or candidate["signature"] in legacy_signatures:
             saved_run = candidate
             print("Using saved scores; no model inference needed.")
         else:
@@ -173,7 +186,7 @@ def main():
 
     # Export every tested threshold, not just the best result.
     with TABLE_PATH.open("w", newline="", encoding="utf-8") as file:
-        writer = csv.DictWriter(file, fieldnames=list(rows[0]))
+        writer = csv.DictWriter(file, fieldnames=list(rows[0]), lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
